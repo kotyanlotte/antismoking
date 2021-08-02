@@ -25,7 +25,9 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 
 var Index = function Index() {
-  return react_1["default"].createElement("h1", null, "Hello World");
+  return react_1["default"].createElement("h1", {
+    className: 'text-red-600'
+  }, "Hello World");
 };
 
 exports.default = Index;
