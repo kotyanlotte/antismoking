@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { VFC } from 'react';
 import ReactDOM  from 'react-dom';
 
-const Index = () => {
+const Index:VFC = () => {
+
   return (
     <h1>Hello World</h1>
   )
