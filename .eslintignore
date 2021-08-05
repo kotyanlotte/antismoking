@@ -3,4 +3,6 @@
 /public/storage
 /storage/*.key
 /vendor
+/public
 .env
+webpack.mix.js
