@@ -24,6 +24,7 @@ module.exports = {
     plugins: ["react", "@typescript-eslint", "simple-import-sort"],
     rules: {
         "import/no-relative-packages": "error",
+        "import/no-relative-parent-imports": "error",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
         "import/newline-after-import": "error",
@@ -33,8 +34,8 @@ module.exports = {
             version: "detect",
         },
         "import/resolver": {
-            node: {
-                extensions: [".ts", ".tsx"],
+            webpack: {
+                config: "node_modules/laravel-mix/setup/webpack.config.js",
             },
         },
     },
