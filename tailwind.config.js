@@ -5,7 +5,11 @@ module.exports = {
   ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                body: ["Kameron", "Noto Sans JP", "sans-serif"],
+            },
+        },
     },
     variants: {
         extend: {},

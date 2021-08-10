@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron&family=Noto+Sans+JP:wght@100&display=swap");
+
 @tailwind base;
+
+@layer base {
+    html {
+        @apply text-lg;
+    }
+    body {
+        @apply font-body;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
