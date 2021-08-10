@@ -28,6 +28,7 @@ module.exports = {
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
         "import/newline-after-import": "error",
+        "react/prop-types": "off",
     },
     settings: {
         react: {
