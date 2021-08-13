@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
     env: {
         browser: true,
@@ -25,6 +24,7 @@ module.exports = {
     rules: {
         "import/no-relative-packages": "error",
         "import/no-relative-parent-imports": "error",
+        "import/no-unresolved": "off",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error",
         "import/newline-after-import": "error",
