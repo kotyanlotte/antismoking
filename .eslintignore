@@ -6,3 +6,6 @@
 /public
 .env
 webpack.mix.js
+tailwind.config.js
+.eslintrc.js
+webpack.config.js
