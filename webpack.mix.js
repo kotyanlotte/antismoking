@@ -22,4 +22,12 @@ mix.ts("resources/src/components/router/routing.tsx", "public/js")
                 "@": path.resolve(__dirname, "resources/src/"),
             },
         },
+    })
+    .browserSync({
+        files: [
+            "resources/src/**/*.tsx",
+            "resources/src/**/*.ts",
+            "public/**/*.*",
+        ],
+        proxy: "http://127.0.0.1:8000",
     });
