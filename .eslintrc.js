@@ -35,6 +35,7 @@ module.exports = {
             version: "detect",
         },
         "import/resolver": {
+            node: {},
             webpack: {
                 config: "node_modules/laravel-mix/setup/webpack.config.js",
             },
