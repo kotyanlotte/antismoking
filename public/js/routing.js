@@ -171,17 +171,17 @@ var Header = function Header() {
   }, react_1["default"].createElement("span", {
     className: "text-4xl md:text-5xl"
   }, "Anti"), react_1["default"].createElement("span", {
-    className: "text-4xl text-green-300 md:text-5xl"
+    className: "text-4xl text-green-default md:text-5xl"
   }, "Smoking")), react_1["default"].createElement("nav", null, react_1["default"].createElement("ul", {
     className: "flex space-x-3 mt-2"
   }, react_1["default"].createElement(react_router_dom_1.Link, {
     to: "/signin"
   }, react_1["default"].createElement(primaryButton_1.PrimaryButton, {
-    style: "bg-green-300 text-white hover:bg-green-400"
+    style: "bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
   }, "\u65B0\u898F\u767B\u9332")), react_1["default"].createElement(react_router_dom_1.Link, {
     to: "/signup"
   }, react_1["default"].createElement(primaryButton_1.PrimaryButton, {
-    style: "text-green-300 border-green-300 hover:bg-green-300 hover:text-white"
+    style: "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
   }, "\u30ED\u30B0\u30A4\u30F3")))));
 };
 

@@ -434,18 +434,18 @@ textarea {
 
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
-  color: #9ca3af;
+  color: #a1a1aa;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1;
-  color: #9ca3af;
+  color: #a1a1aa;
 }
 
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
-  color: #9ca3af;
+  color: #a1a1aa;
 }
 
 button,
@@ -560,8 +560,7 @@ video {
 }
 
 *, ::before, ::after{
-	--tw-border-opacity: 1;
-	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+	border-color: currentColor;
 	--tw-ring-offset-shadow: 0 0 #0000;
 	--tw-ring-shadow: 0 0 #0000;
 	--tw-shadow: 0 0 #0000;
@@ -570,6 +569,8 @@ video {
 html{
 	font-size: 1.125rem;
 	line-height: 1.75rem;
+	--tw-text-opacity: 1;
+	color: rgba(51, 51, 51, var(--tw-text-opacity));
 }
 
 body{
@@ -628,11 +629,11 @@ body{
 	margin-right: calc(0.75rem * var(--tw-space-x-reverse));
 	margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.border-green-300{
+.border-green-default{
 	--tw-border-opacity: 1;
 	border-color: rgba(110, 231, 183, var(--tw-border-opacity));
 }
-.bg-green-300{
+.bg-green-default{
 	--tw-bg-opacity: 1;
 	background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
 }
@@ -643,23 +644,31 @@ body{
 	font-size: 2.25rem;
 	line-height: 2.5rem;
 }
-.text-green-300{
+.text-green-default{
 	--tw-text-opacity: 1;
 	color: rgba(110, 231, 183, var(--tw-text-opacity));
 }
-.text-white{
+.text-white-default{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-.hover\:bg-green-400:hover{
-	--tw-bg-opacity: 1;
-	background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
+.hover\:border-green-dark:hover{
+	--tw-border-opacity: 1;
+	border-color: rgba(52, 211, 153, var(--tw-border-opacity));
 }
-.hover\:bg-green-300:hover{
+.hover\:bg-white-default:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.hover\:bg-green-default:hover{
 	--tw-bg-opacity: 1;
 	background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
 }
-.hover\:text-white:hover{
+.hover\:bg-green-dark:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
+}
+.hover\:text-white-default:hover{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }

@@ -8,7 +8,7 @@ export const Header: VFC = () => {
         <header className="h-20 w-11/12 mx-auto flex flex-col items-center pt-2 surface:flex-row surface:items-center surface:pt-0 surface:justify-between">
             <Link to="about">
                 <span className="text-4xl md:text-5xl">Anti</span>
-                <span className="text-4xl text-green-300 md:text-5xl">
+                <span className="text-4xl text-green-default md:text-5xl">
                     Smoking
                 </span>
             </Link>
@@ -16,7 +16,9 @@ export const Header: VFC = () => {
                 <ul className="flex space-x-3 mt-2">
                     <Link to="/signin">
                         <PrimaryButton
-                            style={"bg-green-300 text-white hover:bg-green-400"}
+                            style={
+                                "bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
+                            }
                         >
                             新規登録
                         </PrimaryButton>
@@ -24,7 +26,7 @@ export const Header: VFC = () => {
                     <Link to="/signup">
                         <PrimaryButton
                             style={
-                                "text-green-300 border-green-300 hover:bg-green-300 hover:text-white"
+                                "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
                             }
                         >
                             ログイン

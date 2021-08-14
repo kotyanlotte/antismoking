@@ -7,6 +7,10 @@ module.exports = {
             fontFamily: {
                 body: ["Kameron", "Noto Sans JP", "sans-serif"],
             },
+            grayscale: {
+                100: "100%",
+                50: "50%",
+            },
         },
         screens: {
             surface: "540px",
@@ -14,6 +18,22 @@ module.exports = {
             md: "768px",
             lg: "1024ppx",
             xl: "1280px",
+        },
+        colors: {
+            black: {
+                default: "#333",
+                dark: "#3C3C3C",
+            },
+            green: {
+                default: "#6EE7B7",
+                dark: "#34D399",
+            },
+            white: {
+                default: "#fff",
+            },
+            gray: {
+                default: "#D1D5DB",
+            },
         },
     },
     variants: {

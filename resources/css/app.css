@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-        @apply text-lg;
+        @apply text-lg text-black-default;
     }
     body {
         @apply font-body;
