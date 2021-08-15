@@ -11,6 +11,9 @@ module.exports = {
                 100: "100%",
                 50: "50%",
             },
+            maxWidth: {
+                280: "280px",
+            },
         },
         screens: {
             surface: "540px",
