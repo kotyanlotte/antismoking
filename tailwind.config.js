@@ -12,7 +12,7 @@ module.exports = {
                 50: "50%",
             },
             maxWidth: {
-                280: "280px",
+                320: "320px",
             },
         },
         screens: {
