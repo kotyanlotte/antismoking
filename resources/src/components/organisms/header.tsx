@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 import { Link } from "react-router-dom";
 
-import { PrimaryButton } from "@/components/atoms/buttons/primaryButton";
+import { HeaderNav } from "@/components/molecules/header/headerNav";
 
 export const Header: VFC = () => {
     return (
@@ -12,28 +12,7 @@ export const Header: VFC = () => {
                     Smoking
                 </span>
             </Link>
-            <nav>
-                <ul className="flex space-x-3 mt-2">
-                    <Link to="/signin">
-                        <PrimaryButton
-                            style={
-                                "bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
-                            }
-                        >
-                            新規登録
-                        </PrimaryButton>
-                    </Link>
-                    <Link to="/signup">
-                        <PrimaryButton
-                            style={
-                                "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
-                            }
-                        >
-                            ログイン
-                        </PrimaryButton>
-                    </Link>
-                </ul>
-            </nav>
+            <HeaderNav />
         </header>
     );
 };
