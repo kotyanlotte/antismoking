@@ -17,5 +17,8 @@
     .btn {
         @apply border rounded py-2 px-4 shadow-md font-bold duration-300 md:py-2 md:px-10;
     }
+    .card {
+        @apply bg-white-default rounded-lg py-10 px-6 w-10/12 mx-auto shadow-md;
+    }
 }
 @tailwind utilities;
