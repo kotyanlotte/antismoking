@@ -1,19 +1,17 @@
 import React, { VFC } from "react";
 
+import { Picture } from "@/components/molecules/picture";
+import { image } from "@/components/utils/image";
+
 export const FirstViewImage: VFC = () => {
     return (
         <div className="relative h-96">
-            <picture>
-                <source
-                    srcSet="/images/firstViewImage/tabacco.webp"
-                    type="image/webp"
-                />
-                <img
-                    className="h-96 w-full object-cover grayscale-100 absolute"
-                    src="/images/firstViewImage/tabacco.jpg"
-                    alt="ファーストビュー画像"
-                />
-            </picture>
+            <Picture
+                srcSet={image.tabacco.srcSet}
+                src={image.tabacco.src}
+                alt={image.tabacco.alt}
+                style={image.tabacco.style}
+            />
             <h1 className="absolute top-16 left-5 text-3xl text-white-default font-bold tracking-widest w-48 surface:w-auto">
                 喫煙は最も健康に悪い
             </h1>
