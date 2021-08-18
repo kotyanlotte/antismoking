@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-import { Picture } from "@/components/molecules/picture";
+import { Picture } from "@/components/molecules/Picture";
 import { image } from "@/components/utils/image";
 
 export const FirstViewImage: VFC = () => {

@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 import { Link } from "react-router-dom";
 
-import { PrimaryButton } from "@/components/atoms/buttons/primaryButton";
+import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 
 type HeaderLinkProps = {
     to: string;

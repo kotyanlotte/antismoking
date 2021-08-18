@@ -1,8 +1,8 @@
 import React, { VFC } from "react";
 
-import { Card } from "@/components/organisms/card";
-import { FirstViewImage } from "@/components/organisms/firstViewImage";
-import { Header } from "@/components/organisms/header";
+import { Card } from "@/components/organisms/Card";
+import { FirstViewImage } from "@/components/organisms/FirstViewImage";
+import { Header } from "@/components/organisms/Header";
 
 export const About: VFC = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-import { CardList } from "@/components/atoms/cardList";
+import { CardList } from "@/components/atoms/CardList";
 import { appExplanation } from "@/components/utils/appExplanation";
 import { image } from "@/components/utils/image";
 

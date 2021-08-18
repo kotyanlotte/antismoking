@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 import { Link } from "react-router-dom";
 
-import { HeaderNav } from "@/components/molecules/header/headerNav";
+import { HeaderNav } from "@/components/molecules/header/HeaderNav";
 
 export const Header: VFC = () => {
     return (

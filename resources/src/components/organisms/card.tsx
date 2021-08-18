@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-import { CardLists } from "@/components/molecules/cardLists";
+import { CardLists } from "@/components/molecules/CardLists";
 
 export const Card: VFC = () => {
     return (

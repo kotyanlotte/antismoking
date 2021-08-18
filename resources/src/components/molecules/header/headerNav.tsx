@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-import { HeaderLink } from "@/components/molecules/header/headerLink";
+import { HeaderLink } from "@/components/molecules/header/HeaderLink";
 
 export const HeaderNav: VFC = () => {
     return (

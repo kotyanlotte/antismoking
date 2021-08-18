@@ -7,7 +7,7 @@ import {
     Switch,
 } from "react-router-dom";
 
-import { About } from "@/components/pages/about";
+import { About } from "@/components/pages/About";
 import { Signin } from "@/components/pages/signin";
 import { Signup } from "@/components/pages/signup";
 
