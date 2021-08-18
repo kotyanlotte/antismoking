@@ -10,7 +10,7 @@ export const FirstViewImage: VFC = () => {
                 srcSet={image.tabacco.srcSet}
                 src={image.tabacco.src}
                 alt={image.tabacco.alt}
-                style={image.tabacco.style}
+                style={"h-96 w-full object-cover grayscale-100 absolute"}
             />
             <h1 className="absolute top-16 left-5 text-3xl text-white-default font-bold tracking-widest w-48 surface:w-auto">
                 喫煙は最も健康に悪い
