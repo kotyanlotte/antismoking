@@ -36,6 +36,7 @@ module.exports = {
             },
             gray: {
                 default: "#D1D5DB",
+                light: "#ececec",
             },
             yellow: {
                 light: "#fafaf0",
