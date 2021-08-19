@@ -1,3 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron&family=Noto+Sans+JP:wght@100&display=swap");
+
 @tailwind base;
+
+@layer base {
+    html {
+        @apply text-lg text-black-default;
+    }
+    body {
+        @apply font-body;
+    }
+}
+
 @tailwind components;
+
+@layer components {
+    .btn {
+        @apply border rounded py-2 px-4 shadow-md font-bold duration-300 md:py-2 md:px-10;
+    }
+    .card {
+        @apply bg-white-default rounded-lg py-10 px-6 w-10/12 mx-auto shadow-md flex flex-col items-center space-y-2;
+    }
+}
 @tailwind utilities;

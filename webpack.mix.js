@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
+const path = require("path");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +12,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts("resources/src/components/index.tsx", "public/js")
+mix.ts("resources/src/components/router/routing.tsx", "public/js")
     .react()
-    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
+    .webpackConfig({
+        resolve: {
+            extensions: [".ts", ".tsx"],
+            alias: {
+                "@": path.resolve(__dirname, "resources/src/"),
+            },
+        },
+    })
+    .browserSync({
+        files: [
+            "resources/src/**/*.tsx",
+            "resources/src/**/*.ts",
+            "public/**/*.*",
+        ],
+        proxy: "http://127.0.0.1:8000",
+    });
