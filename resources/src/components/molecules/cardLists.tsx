@@ -6,7 +6,7 @@ import { image } from "@/components/utils/image";
 
 export const CardLists: VFC = () => {
     return (
-        <div className="md:flex md:flex-row space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+        <div className="mb-8 md:flex md:flex-row space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
             <CardList
                 title={appExplanation.charts.title}
                 sentence={appExplanation.charts.sentence}
