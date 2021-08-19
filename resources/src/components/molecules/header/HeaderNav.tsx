@@ -11,10 +11,12 @@ export const HeaderNav: VFC = () => {
                     style={
                         "bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
                     }
+                    text="ログイン"
                 />
                 <HeaderLink
                     to="/signup"
                     style="text-green-default border-green-default hover:bg-green-default hover:text-white-default"
+                    text="新規登録"
                 />
             </ul>
         </nav>

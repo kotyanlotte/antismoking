@@ -6,12 +6,13 @@ import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 type HeaderLinkProps = {
     to: string;
     style: string;
+    text: string;
 };
 
-export const HeaderLink: VFC<HeaderLinkProps> = ({ to, style }) => {
+export const HeaderLink: VFC<HeaderLinkProps> = ({ to, style, text }) => {
     return (
         <Link to={to}>
-            <PrimaryButton style={style}>新規登録</PrimaryButton>
+            <PrimaryButton style={style}>{text}</PrimaryButton>
         </Link>
     );
 };
