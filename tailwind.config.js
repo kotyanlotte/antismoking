@@ -14,6 +14,9 @@ module.exports = {
             maxWidth: {
                 320: "320px",
             },
+            width: {
+                650: "650px",
+            },
         },
         screens: {
             surface: "540px",
