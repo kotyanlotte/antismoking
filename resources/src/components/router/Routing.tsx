@@ -10,7 +10,7 @@ import {
 import { About } from "@/components/pages/About";
 import { Privacy } from "@/components/pages/Privacy";
 import { Signin } from "@/components/pages/Signin";
-import { Signup } from "@/components/pages/signup";
+import { Signup } from "@/components/pages/Signup";
 import { Terms } from "@/components/pages/Terms";
 
 export const Routing: VFC = () => {
