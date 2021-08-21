@@ -9,13 +9,13 @@ export const HeaderNav: VFC = () => {
                 <HeaderLink
                     to="/signin"
                     style={
-                        "bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
+                        "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
                     }
                     text="ログイン"
                 />
                 <HeaderLink
                     to="/signup"
-                    style="text-green-default border-green-default hover:bg-green-default hover:text-white-default"
+                    style="bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
                     text="新規登録"
                 />
             </ul>
