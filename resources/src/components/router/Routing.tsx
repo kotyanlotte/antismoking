@@ -9,7 +9,7 @@ import {
 
 import { About } from "@/components/pages/About";
 import { Privacy } from "@/components/pages/Privacy";
-import { Signin } from "@/components/pages/signin";
+import { Signin } from "@/components/pages/Signin";
 import { Signup } from "@/components/pages/signup";
 import { Terms } from "@/components/pages/Terms";
 
