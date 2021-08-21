@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Footer: VFC = () => {
     return (
-        <footer className="bg-gray-light text-center">
+        <footer className="bg-green-default text-center">
             <div className="flex flex-col justify-center h-20 surface:flex-row surface:items-center surface:justify-around xl:justify-between xl:mx-8">
                 <div>
                     <small>&copy; 2021 Ko_chan</small>
