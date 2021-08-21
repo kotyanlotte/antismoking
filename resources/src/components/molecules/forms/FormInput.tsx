@@ -2,14 +2,14 @@ import React, { VFC } from "react";
 
 import { Input } from "@/components/atoms/inputs/Input";
 
-type LoginFormProps = {
+type FormInputProps = {
     htmlFor: string;
     placeholder: string;
     id: string;
     children: string;
 };
 
-export const LoginFormInput: VFC<LoginFormProps> = ({
+export const FormInput: VFC<FormInputProps> = ({
     htmlFor,
     placeholder,
     id,

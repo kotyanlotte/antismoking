@@ -1,24 +1,24 @@
 import React, { VFC } from "react";
 
-import { LoginFormInput } from "@/components/molecules/forms/LoginFormInput";
+import { FormInput } from "@/components/molecules/forms/FormInput";
 
 export const LoginForm: VFC = () => {
     return (
         <form className="space-y-9">
-            <LoginFormInput
+            <FormInput
                 htmlFor="mail"
                 placeholder="メールアドレスを入力"
                 id="mail"
             >
                 メールアドレス
-            </LoginFormInput>
-            <LoginFormInput
+            </FormInput>
+            <FormInput
                 htmlFor="password"
                 placeholder="パスワードを入力"
                 id="password"
             >
                 パスワード
-            </LoginFormInput>
+            </FormInput>
         </form>
     );
 };
