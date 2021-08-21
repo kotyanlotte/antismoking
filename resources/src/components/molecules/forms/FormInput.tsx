@@ -19,7 +19,10 @@ export const FormInput: VFC<FormInputProps> = ({
     const location = useLocation<LocationType>();
     return (
         <div>
-            <label htmlFor={htmlFor} className="font-bold cursor-pointer">
+            <label
+                htmlFor={htmlFor}
+                className="font-bold text-sm cursor-pointer"
+            >
                 {children}
             </label>
             <Input placeholder={placeholder} id={id} />
