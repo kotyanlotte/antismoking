@@ -20,10 +20,10 @@ export const FormInput: VFC<FormInputProps> = ({
     const location = useLocation<LocationType>();
 
     return (
-        <div>
+        <div className="w-inputWidth">
             <label
                 htmlFor={htmlFor}
-                className="font-bold text-sm cursor-pointer"
+                className="font-bold text-sm cursor-pointer block mb-1"
             >
                 {children}
                 {location.pathname === "/signup" && (

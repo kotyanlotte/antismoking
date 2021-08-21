@@ -16,6 +16,7 @@ module.exports = {
             },
             width: {
                 650: "650px",
+                inputWidth: "min(400px,80vw)",
             },
         },
         screens: {
