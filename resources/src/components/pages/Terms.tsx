@@ -1,9 +1,15 @@
 import React, { VFC } from "react";
 
+import { Footer } from "@/components/organisms/Footer";
+import { Header } from "@/components/organisms/Header";
+import { TermsLists } from "@/components/organisms/TermsLists";
+
 export const Terms: VFC = () => {
     return (
         <>
-            <h1>terms</h1>
+            <Header />
+            <TermsLists />
+            <Footer />
         </>
     );
 };

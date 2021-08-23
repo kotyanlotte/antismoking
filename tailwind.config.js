@@ -18,6 +18,9 @@ module.exports = {
                 650: "650px",
                 inputWidth: "min(400px,80vw)",
             },
+            padding: {
+                vw10: "10vw",
+            },
         },
         screens: {
             surface: "540px",
