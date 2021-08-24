@@ -12,10 +12,12 @@ import { Privacy } from "@/components/pages/Privacy";
 import { Signin } from "@/components/pages/Signin";
 import { Signup } from "@/components/pages/Signup";
 import { Terms } from "@/components/pages/Terms";
+import { ScrollToTop } from "@/components/utils/ScrollToTop";
 
 export const Routing: VFC = () => {
     return (
         <Router>
+            <ScrollToTop />
             <Switch>
                 <Redirect exact from="/" to="/about" />
                 <Route path="/about" component={About} />
