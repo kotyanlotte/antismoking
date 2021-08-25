@@ -1,9 +1,15 @@
 import React, { VFC } from "react";
 
+import { Footer } from "@/components/organisms/Footer";
+import { Header } from "@/components/organisms/Header";
+import { PrivacyLists } from "@/components/organisms/PrivacyLists";
+
 export const Privacy: VFC = () => {
     return (
         <>
-            <h1>Privacy</h1>
+            <Header />
+            <PrivacyLists />
+            <Footer />
         </>
     );
 };
