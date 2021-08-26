@@ -11,7 +11,7 @@ export const Footer: VFC = () => {
                 <nav>
                     <ul className="space-x-4">
                         <Link to="/terms">利用規約</Link>
-                        <Link to="/privacy">プライバシーポリシー</Link>
+                        <Link to="/policy">プライバシーポリシー</Link>
                     </ul>
                 </nav>
             </div>

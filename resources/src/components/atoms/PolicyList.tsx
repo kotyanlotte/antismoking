@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-type PrivacyListProps = {
+type PolicyListProps = {
     description: {
         heading: string;
         lists?: string[];
@@ -8,7 +8,7 @@ type PrivacyListProps = {
     };
 };
 
-export const PrivacyList: VFC<PrivacyListProps> = ({ description }) => {
+export const PolicyList: VFC<PolicyListProps> = ({ description }) => {
     return (
         <div className="mb-5">
             <h2 className="font-bold text-xl mb-3 flex justify-center">

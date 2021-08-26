@@ -1,4 +1,4 @@
-export const privacy = {
+export const policy = {
     first: {
         heading: "第1条（個人情報）",
         paragraphe:

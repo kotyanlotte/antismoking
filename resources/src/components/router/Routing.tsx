@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import { About } from "@/components/pages/About";
-import { Privacy } from "@/components/pages/Privacy";
+import { Policy } from "@/components/pages/Policy";
 import { Signin } from "@/components/pages/Signin";
 import { Signup } from "@/components/pages/Signup";
 import { Terms } from "@/components/pages/Terms";
@@ -24,7 +24,7 @@ export const Routing: VFC = () => {
                 <Route path="/signin" component={Signin} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/terms" component={Terms} />
-                <Route path="/privacy" component={Privacy} />
+                <Route path="/policy" component={Policy} />
             </Switch>
         </Router>
     );
