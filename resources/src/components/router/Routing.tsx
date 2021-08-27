@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import { About } from "@/components/pages/About";
+import { Home } from "@/components/pages/Home";
 import { PasswordForgot } from "@/components/pages/PasswordForgot";
 import { PasswordReset } from "@/components/pages/PasswordReset";
 import { Policy } from "@/components/pages/Policy";
@@ -29,6 +30,7 @@ export const Routing: VFC = () => {
                 <Route path="/policy" component={Policy} />
                 <Route path="/password/forgot" component={PasswordForgot} />
                 <Route path="/password/reset" component={PasswordReset} />
+                <Route path="/home" component={Home} />
             </Switch>
         </Router>
     );
