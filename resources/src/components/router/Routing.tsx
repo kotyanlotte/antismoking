@@ -9,6 +9,7 @@ import {
 
 import { About } from "@/components/pages/About";
 import { PasswordForgot } from "@/components/pages/PasswordForgot";
+import { PasswordReset } from "@/components/pages/PasswordReset";
 import { Policy } from "@/components/pages/Policy";
 import { Signin } from "@/components/pages/Signin";
 import { Signup } from "@/components/pages/Signup";
@@ -27,6 +28,7 @@ export const Routing: VFC = () => {
                 <Route path="/terms" component={Terms} />
                 <Route path="/policy" component={Policy} />
                 <Route path="/password/forgot" component={PasswordForgot} />
+                <Route path="/password/reset" component={PasswordReset} />
             </Switch>
         </Router>
     );
