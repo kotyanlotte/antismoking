@@ -6,6 +6,7 @@ import {
     Route,
     Switch,
 } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
 import { About } from "@/components/pages/About";
 import { Home } from "@/components/pages/Home";
@@ -20,18 +21,20 @@ import { ScrollToTop } from "@/components/utils/ScrollToTop";
 export const Routing: VFC = () => {
     return (
         <Router>
-            <ScrollToTop />
-            <Switch>
-                <Redirect exact from="/" to="/about" />
-                <Route path="/about" component={About} />
-                <Route path="/signin" component={Signin} />
-                <Route path="/register" component={Register} />
-                <Route path="/terms" component={Terms} />
-                <Route path="/policy" component={Policy} />
-                <Route path="/password/forgot" component={PasswordForgot} />
-                <Route path="/password/reset" component={PasswordReset} />
-                <Route path="/home" component={Home} />
-            </Switch>
+            <RecoilRoot>
+                <ScrollToTop />
+                <Switch>
+                    <Redirect exact from="/" to="/about" />
+                    <Route path="/about" component={About} />
+                    <Route path="/signin" component={Signin} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/terms" component={Terms} />
+                    <Route path="/policy" component={Policy} />
+                    <Route path="/password/forgot" component={PasswordForgot} />
+                    <Route path="/password/reset" component={PasswordReset} />
+                    <Route path="/home" component={Home} />
+                </Switch>
+            </RecoilRoot>
         </Router>
     );
 };
