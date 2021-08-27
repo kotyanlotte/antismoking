@@ -26,7 +26,7 @@ export const FormInput: VFC<FormInputProps> = ({
                 className="font-bold text-sm cursor-pointer block mb-1"
             >
                 {children}
-                {location.pathname === "/signup" && (
+                {location.pathname === "/register" && (
                     <span className="ml-1 bg-red-default rounded text-xs text-white-default p-1 font-bold">
                         必須
                     </span>

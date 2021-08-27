@@ -8,7 +8,7 @@ export const SignInArea: VFC = () => {
     return (
         <div className="bg-gray-light py-12 flex justify-center">
             <div className="card w-650 space-y-6">
-                <Link to="/signup">
+                <Link to="/register">
                     <h2 className="text-green-dark font-bold">
                         アカウントを持っていない場合
                     </h2>

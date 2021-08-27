@@ -14,7 +14,7 @@ export const HeaderNav: VFC = () => {
                     text="ログイン"
                 />
                 <HeaderLink
-                    to="/signup"
+                    to="/register"
                     style="bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
                     text="新規登録"
                 />
