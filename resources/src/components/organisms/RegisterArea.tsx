@@ -5,7 +5,7 @@ import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useRegisterUser } from "@/components/hooks/registerUser";
 import { RegisterForm } from "@/components/organisms/forms/RegisterForm";
 
-export const SignUpArea: VFC = () => {
+export const RegisterArea: VFC = () => {
     const { registerUser } = useRegisterUser();
 
     // ユーザーを登録する関数
