@@ -2,7 +2,7 @@ import React, { useCallback, VFC } from "react";
 import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
-import { useRegisterUser } from "@/components/hooks/registerUser";
+import { useRegisterUser } from "@/components/hooks/useRegisterUser";
 import { RegisterForm } from "@/components/organisms/forms/RegisterForm";
 
 export const RegisterArea: VFC = () => {
