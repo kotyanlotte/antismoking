@@ -4,31 +4,30 @@ import { useRecoilState } from "recoil";
 import { FormInput } from "@/components/molecules/forms/FormInput";
 import {
     emailState,
-    nicknameState,
+    nameState,
     passwordConfirmationState,
     passwordState,
 } from "@/components/store/index";
 
 export const RegisterForm: VFC = () => {
-    const [nickname, setNickname] = useRecoilState(nicknameState);
+    const [name, setName] = useRecoilState(nameState);
     const [email, setEmail] = useRecoilState(emailState);
     const [password, setPassword] = useRecoilState(passwordState);
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
-    console.log(nickname, email, password, passwordConfirmation);
 
     // ニックネームを取得する関数
-    const onChangeGetNickname = useCallback(
-        (e) => {
-            setNickname(e.target.value);
+    const onChangeGetName = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            setName(e.target.value);
         },
-        [setNickname]
+        [setName]
     );
 
     // メールアドレスを取得する関数
     const onChangeGetEmail = useCallback(
-        (e) => {
+        (e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
         },
         [setEmail]
@@ -36,7 +35,7 @@ export const RegisterForm: VFC = () => {
 
     // パスワードを取得する関数
     const onChangeGetPassword = useCallback(
-        (e) => {
+        (e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
         },
         [setPassword]
@@ -44,27 +43,31 @@ export const RegisterForm: VFC = () => {
 
     // 再確認用パスワードを取得する関数
     const onChangeGetPasswordConfirmation = useCallback(
-        (e) => {
+        (e: React.ChangeEvent<HTMLInputElement>) => {
             setPasswordConfirmation(e.target.value);
         },
         [setPasswordConfirmation]
     );
 
     return (
-        <form className="space-y-9">
+        <form className="space-y-9" id="register">
             <FormInput
-                htmlFor="nickname"
+                htmlFor="name"
+                type="text"
                 placeholder="ニックネームを入力"
-                id="nickname"
-                value={nickname}
-                onChange={onChangeGetNickname}
+                id="name"
+                name="name"
+                value={name}
+                onChange={onChangeGetName}
             >
                 ニックネーム
             </FormInput>
             <FormInput
                 htmlFor="mail"
+                type="email"
                 placeholder="メールアドレスを入力"
                 id="mail"
+                name="mail"
                 value={email}
                 onChange={onChangeGetEmail}
             >
@@ -72,17 +75,21 @@ export const RegisterForm: VFC = () => {
             </FormInput>
             <FormInput
                 htmlFor="password"
+                type="password"
                 placeholder="パスワードを入力"
                 id="password"
+                name="password"
                 value={password}
                 onChange={onChangeGetPassword}
             >
                 パスワード
             </FormInput>
             <FormInput
-                htmlFor="confirmation"
+                htmlFor="passwordConfirmation"
+                type="password"
                 placeholder="上記と同じパスワードを入力"
-                id="confirmation"
+                id="passwordConfirmation"
+                name="passwordConfirmation"
                 value={passwordConfirmation}
                 onChange={onChangeGetPasswordConfirmation}
             >

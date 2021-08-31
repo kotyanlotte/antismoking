@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
-export const nicknameState = atom<string>({
-    key: "nicknameState",
+export const nameState = atom<string>({
+    key: "nameState",
     default: "",
 });
 

@@ -6,15 +6,17 @@ import { LocationType } from "@/components/types";
 
 type FormInputProps = {
     htmlFor: string;
+    type?: string;
     placeholder: string;
     id: string;
+    name?: string;
     children: string;
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const FormInput: VFC<FormInputProps> = memo(
-    ({ htmlFor, placeholder, id, children, value, onChange }) => {
+    ({ htmlFor, placeholder, id, type, name, children, value, onChange }) => {
         const location = useLocation<LocationType>();
 
         return (
@@ -32,7 +34,9 @@ export const FormInput: VFC<FormInputProps> = memo(
                 </label>
                 <Input
                     placeholder={placeholder}
+                    type={type}
                     id={id}
+                    name={name}
                     value={value}
                     onChange={onChange}
                 />
