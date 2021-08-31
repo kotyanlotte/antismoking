@@ -18,7 +18,7 @@ export const RegisterForm: VFC = () => {
     );
 
     // ニックネームを取得する関数
-    const onChangeGetName = useCallback(
+    const onChangeName = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setName(e.target.value);
         },
@@ -26,7 +26,7 @@ export const RegisterForm: VFC = () => {
     );
 
     // メールアドレスを取得する関数
-    const onChangeGetEmail = useCallback(
+    const onChangeEmail = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
         },
@@ -34,7 +34,7 @@ export const RegisterForm: VFC = () => {
     );
 
     // パスワードを取得する関数
-    const onChangeGetPassword = useCallback(
+    const onChangePassword = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
         },
@@ -42,7 +42,7 @@ export const RegisterForm: VFC = () => {
     );
 
     // 再確認用パスワードを取得する関数
-    const onChangeGetPasswordConfirmation = useCallback(
+    const onChangePasswordConfirmation = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setPasswordConfirmation(e.target.value);
         },
@@ -58,7 +58,7 @@ export const RegisterForm: VFC = () => {
                 id="name"
                 name="name"
                 value={name}
-                onChange={onChangeGetName}
+                onChange={onChangeName}
             >
                 ニックネーム
             </FormInput>
@@ -69,7 +69,7 @@ export const RegisterForm: VFC = () => {
                 id="mail"
                 name="mail"
                 value={email}
-                onChange={onChangeGetEmail}
+                onChange={onChangeEmail}
             >
                 メールアドレス
             </FormInput>
@@ -80,7 +80,7 @@ export const RegisterForm: VFC = () => {
                 id="password"
                 name="password"
                 value={password}
-                onChange={onChangeGetPassword}
+                onChange={onChangePassword}
             >
                 パスワード
             </FormInput>
@@ -91,7 +91,7 @@ export const RegisterForm: VFC = () => {
                 id="passwordConfirmation"
                 name="passwordConfirmation"
                 value={passwordConfirmation}
-                onChange={onChangeGetPasswordConfirmation}
+                onChange={onChangePasswordConfirmation}
             >
                 パスワード(確認用)
             </FormInput>
