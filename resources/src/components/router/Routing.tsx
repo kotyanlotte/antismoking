@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import React, { VFC } from "react";
 import ReactDOM from "react-dom";
 import {
@@ -6,6 +8,7 @@ import {
     Route,
     Switch,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 
 import { About } from "@/components/pages/About";
@@ -35,6 +38,7 @@ export const Routing: VFC = () => {
                     <Route path="/home" component={Home} />
                 </Switch>
             </RecoilRoot>
+            <ToastContainer />
         </Router>
     );
 };
