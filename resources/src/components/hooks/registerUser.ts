@@ -35,8 +35,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
             })
             .catch(() => {
                 alert("ユーザー登録に失敗しました");
+                history.push("/register");
             });
-    }, [name, email, password, passwordConfirmation]);
+    }, [name, email, password, passwordConfirmation, history]);
 
     return { registerUser };
 };
