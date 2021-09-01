@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilValue } from "recoil";
@@ -13,6 +13,7 @@ import {
 
 type UserRegisterReturnType = {
     registerUser: () => Promise<void>;
+    loading: boolean;
 };
 
 export const useRegisterUser = (): UserRegisterReturnType => {
@@ -20,9 +21,11 @@ export const useRegisterUser = (): UserRegisterReturnType => {
     const email = useRecoilValue(emailState);
     const password = useRecoilValue(passwordState);
     const passwordConfirmation = useRecoilValue(passwordConfirmationState);
+    const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
     const registerUser = useCallback(async () => {
+        setLoading(true);
         await axios
             .post("/register", {
                 name: name,
@@ -37,8 +40,11 @@ export const useRegisterUser = (): UserRegisterReturnType => {
             .catch(() => {
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, [name, email, password, passwordConfirmation, history]);
 
-    return { registerUser };
+    return { registerUser, loading };
 };

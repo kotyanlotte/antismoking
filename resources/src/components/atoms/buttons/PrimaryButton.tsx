@@ -1,3 +1,5 @@
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { VFC } from "react";
 
 type PrimaryButtonProps = {
@@ -5,6 +7,7 @@ type PrimaryButtonProps = {
     style: string;
     id?: string;
     onClick?: () => void;
+    loading?: boolean;
 };
 
 export const PrimaryButton: VFC<PrimaryButtonProps> = ({
@@ -12,6 +15,7 @@ export const PrimaryButton: VFC<PrimaryButtonProps> = ({
     style,
     id,
     onClick,
+    loading,
 }) => {
     return (
         <button
@@ -20,7 +24,7 @@ export const PrimaryButton: VFC<PrimaryButtonProps> = ({
             form={id}
             type="button"
         >
-            {children}
+            {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : children}
         </button>
     );
 };

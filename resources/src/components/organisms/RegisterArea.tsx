@@ -6,7 +6,7 @@ import { useRegisterUser } from "@/components/hooks/useRegisterUser";
 import { RegisterForm } from "@/components/organisms/forms/RegisterForm";
 
 export const RegisterArea: VFC = () => {
-    const { registerUser } = useRegisterUser();
+    const { registerUser, loading } = useRegisterUser();
 
     // ユーザーを登録する関数
     const onClickRegisterUser = useCallback(() => {
@@ -23,6 +23,7 @@ export const RegisterArea: VFC = () => {
                 </Link>
                 <RegisterForm />
                 <PrimaryButton
+                    loading={loading}
                     style="text-green-default w-52 border-green-default hover:bg-green-default hover:text-white-default"
                     onClick={onClickRegisterUser}
                     id={"register"}
