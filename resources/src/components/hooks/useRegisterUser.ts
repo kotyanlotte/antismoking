@@ -10,6 +10,7 @@ import {
     passwordConfirmationState,
     passwordState,
 } from "@/components/store/index";
+import { RegisterErrorType } from "@/components/types/registerErrorType";
 
 type UserRegisterReturnType = {
     registerUser: () => Promise<void>;
@@ -39,7 +40,8 @@ export const useRegisterUser = (): UserRegisterReturnType => {
                 toast.success("アカウントの登録に成功しました");
                 history.push("/home");
             })
-            .catch(() => {
+            .catch((e: RegisterErrorType) => {
+                console.log(e.response.data.errors);
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             })
