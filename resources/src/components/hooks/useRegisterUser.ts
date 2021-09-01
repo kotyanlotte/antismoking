@@ -2,7 +2,7 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 
 import {
     emailState,
@@ -17,10 +17,12 @@ type UserRegisterReturnType = {
 };
 
 export const useRegisterUser = (): UserRegisterReturnType => {
-    const name = useRecoilValue(nameState);
-    const email = useRecoilValue(emailState);
-    const password = useRecoilValue(passwordState);
-    const passwordConfirmation = useRecoilValue(passwordConfirmationState);
+    const [name, setName] = useRecoilState(nameState);
+    const [email, setEmail] = useRecoilState(emailState);
+    const [password, setPassword] = useRecoilState(passwordState);
+    const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
+        passwordConfirmationState
+    );
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
@@ -43,8 +45,22 @@ export const useRegisterUser = (): UserRegisterReturnType => {
             })
             .finally(() => {
                 setLoading(false);
+                setName("");
+                setEmail("");
+                setPassword("");
+                setPasswordConfirmation("");
             });
-    }, [name, email, password, passwordConfirmation, history]);
+    }, [
+        name,
+        email,
+        password,
+        passwordConfirmation,
+        history,
+        setEmail,
+        setName,
+        setPassword,
+        setPasswordConfirmation,
+    ]);
 
     return { registerUser, loading };
 };
