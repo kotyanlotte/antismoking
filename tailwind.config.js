@@ -20,6 +20,7 @@ module.exports = {
             },
             padding: {
                 vw10: "10vw",
+                em: "1em",
             },
         },
         screens: {
@@ -55,9 +56,12 @@ module.exports = {
                 dark: "#7F1D1D",
             },
         },
+        textIndent: {
+            sm: "-1rem",
+        },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("tailwindcss-text-indent")()],
 };

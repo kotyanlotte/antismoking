@@ -56,7 +56,9 @@ export const FormInput: VFC<FormInputProps> = memo(
                         key={index}
                         className="bg-red-light text-red-dark p-4 mt-2 rounded-md"
                     >
-                        <li className='before:content-["・"]'>{message}</li>
+                        <li className="indent-sm pl-em before:content-['・']">
+                            {message}
+                        </li>
                     </ul>
                 ))}
             </div>
