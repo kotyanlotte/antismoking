@@ -2,8 +2,13 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
+import {
+    errorEmailState,
+    errorNameState,
+    errorPasswordState,
+} from "@/components/store/registerErrorState";
 import {
     emailState,
     nameState,
@@ -24,6 +29,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
+    const setNameError = useSetRecoilState(errorNameState);
+    const setEmailError = useSetRecoilState(errorEmailState);
+    const setPasswordError = useSetRecoilState(errorPasswordState);
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
@@ -41,7 +49,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {
-                console.log(e.response.data.errors);
+                setNameError(e.response.data.errors.name);
+                setEmailError(e.response.data.errors.email);
+                setPasswordError(e.response.data.errors.password);
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             })
@@ -62,6 +72,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
         setName,
         setPassword,
         setPasswordConfirmation,
+        setNameError,
+        setEmailError,
+        setPasswordError,
     ]);
 
     return { registerUser, loading };

@@ -13,10 +13,21 @@ type FormInputProps = {
     children: string;
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    error?: string[];
 };
 
 export const FormInput: VFC<FormInputProps> = memo(
-    ({ htmlFor, placeholder, id, type, name, children, value, onChange }) => {
+    ({
+        htmlFor,
+        placeholder,
+        id,
+        type,
+        name,
+        children,
+        value,
+        onChange,
+        error,
+    }) => {
         const location = useLocation<LocationType>();
 
         return (
@@ -40,6 +51,14 @@ export const FormInput: VFC<FormInputProps> = memo(
                     value={value}
                     onChange={onChange}
                 />
+                {error?.map((message, index) => (
+                    <ul
+                        key={index}
+                        className="bg-red-light text-red-dark p-4 mt-2 rounded-md"
+                    >
+                        <li className='before:content-["・"]'>{message}</li>
+                    </ul>
+                ))}
             </div>
         );
     }

@@ -1,7 +1,12 @@
 import React, { useCallback, VFC } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
+import {
+    errorEmailState,
+    errorNameState,
+    errorPasswordState,
+} from "@/components/store/registerErrorState";
 import {
     emailState,
     nameState,
@@ -16,6 +21,9 @@ export const RegisterForm: VFC = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
+    const nameError = useRecoilValue(errorNameState);
+    const emailError = useRecoilValue(errorEmailState);
+    const passwordError = useRecoilValue(errorPasswordState);
 
     // ニックネームを取得する関数
     const onChangeName = useCallback(
@@ -59,6 +67,7 @@ export const RegisterForm: VFC = () => {
                 name="name"
                 value={name}
                 onChange={onChangeName}
+                error={nameError}
             >
                 ニックネーム
             </FormInput>
@@ -70,6 +79,7 @@ export const RegisterForm: VFC = () => {
                 name="mail"
                 value={email}
                 onChange={onChangeEmail}
+                error={emailError}
             >
                 メールアドレス
             </FormInput>
@@ -81,6 +91,7 @@ export const RegisterForm: VFC = () => {
                 name="password"
                 value={password}
                 onChange={onChangePassword}
+                error={passwordError}
             >
                 パスワード
             </FormInput>
