@@ -37,8 +37,8 @@ export const Routing: VFC = () => {
                     <Route path="/password/reset" component={PasswordReset} />
                     <Route path="/home" component={Home} />
                 </Switch>
+                <ToastContainer position="top-center" autoClose={3000} />
             </RecoilRoot>
-            <ToastContainer />
         </Router>
     );
 };

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCallback } from "react";
 import { useHistory } from "react-router-dom/";
+import { toast } from "react-toastify";
 import { useRecoilValue } from "recoil";
 
 import {
@@ -30,11 +31,11 @@ export const useRegisterUser = (): UserRegisterReturnType => {
                 password_confirmation: passwordConfirmation,
             })
             .then(() => {
-                alert("ユーザー登録に成功しました");
+                toast.success("アカウントの登録に成功しました");
                 history.push("/home");
             })
             .catch(() => {
-                alert("ユーザー登録に失敗しました");
+                toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             });
     }, [name, email, password, passwordConfirmation, history]);
