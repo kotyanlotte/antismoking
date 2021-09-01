@@ -7,7 +7,7 @@ import {
     nameState,
     passwordConfirmationState,
     passwordState,
-} from "@/components/store/index";
+} from "@/components/store/registerValueState";
 
 export const RegisterForm: VFC = () => {
     const [name, setName] = useRecoilState(nameState);

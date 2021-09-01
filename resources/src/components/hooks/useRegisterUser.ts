@@ -9,7 +9,7 @@ import {
     nameState,
     passwordConfirmationState,
     passwordState,
-} from "@/components/store/index";
+} from "@/components/store/registerValueState";
 import { RegisterErrorType } from "@/components/types/registerErrorType";
 
 type UserRegisterReturnType = {
