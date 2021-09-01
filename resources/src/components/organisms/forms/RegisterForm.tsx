@@ -89,7 +89,7 @@ export const RegisterForm: VFC = () => {
                 type="password"
                 placeholder="上記と同じパスワードを入力"
                 id="passwordConfirmation"
-                name="passwordConfirmation"
+                name="password_confirmation"
                 value={passwordConfirmation}
                 onChange={onChangePasswordConfirmation}
             >
