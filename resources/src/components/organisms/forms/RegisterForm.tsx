@@ -5,6 +5,7 @@ import { FormInput } from "@/components/molecules/forms/FormInput";
 import {
     errorEmailState,
     errorNameState,
+    errorPasswordConfirmationState,
     errorPasswordState,
 } from "@/components/store/registerErrorState";
 import {
@@ -24,6 +25,9 @@ export const RegisterForm: VFC = () => {
     const nameError = useRecoilValue(errorNameState);
     const emailError = useRecoilValue(errorEmailState);
     const passwordError = useRecoilValue(errorPasswordState);
+    const passwordConfirmationError = useRecoilValue(
+        errorPasswordConfirmationState
+    );
 
     // ニックネームを取得する関数
     const onChangeName = useCallback(
@@ -103,6 +107,7 @@ export const RegisterForm: VFC = () => {
                 name="password_confirmation"
                 value={passwordConfirmation}
                 onChange={onChangePasswordConfirmation}
+                error={passwordConfirmationError}
             >
                 パスワード(確認用)
             </FormInput>

@@ -7,6 +7,7 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import {
     errorEmailState,
     errorNameState,
+    errorPasswordConfirmationState,
     errorPasswordState,
 } from "@/components/store/registerErrorState";
 import {
@@ -32,6 +33,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
     const setNameError = useSetRecoilState(errorNameState);
     const setEmailError = useSetRecoilState(errorEmailState);
     const setPasswordError = useSetRecoilState(errorPasswordState);
+    const setPasswordConfirmationError = useSetRecoilState(
+        errorPasswordConfirmationState
+    );
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
@@ -52,6 +56,9 @@ export const useRegisterUser = (): UserRegisterReturnType => {
                 setNameError(e.response.data.errors.name);
                 setEmailError(e.response.data.errors.email);
                 setPasswordError(e.response.data.errors.password);
+                setPasswordConfirmationError(
+                    e.response.data.errors.password_confirmation
+                );
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             })
@@ -75,6 +82,7 @@ export const useRegisterUser = (): UserRegisterReturnType => {
         setNameError,
         setEmailError,
         setPasswordError,
+        setPasswordConfirmationError,
     ]);
 
     return { registerUser, loading };

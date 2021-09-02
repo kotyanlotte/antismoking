@@ -14,3 +14,8 @@ export const errorPasswordState = atom<string[]>({
     key: "errorPasswordState",
     default: [],
 });
+
+export const errorPasswordConfirmationState = atom<string[]>({
+    key: "errorPasswordConfirmationState",
+    default: [],
+});

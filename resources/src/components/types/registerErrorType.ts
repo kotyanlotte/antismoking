@@ -5,6 +5,7 @@ export type RegisterErrorType = {
                 name: string[];
                 email: string[];
                 password: string[];
+                password_confirmation: string[];
             };
         };
     };
