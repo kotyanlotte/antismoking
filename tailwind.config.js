@@ -56,12 +56,9 @@ module.exports = {
                 dark: "#7F1D1D",
             },
         },
-        textIndent: {
-            sm: "-1rem",
-        },
     },
     variants: {
         extend: {},
     },
-    plugins: [require("tailwindcss-text-indent")()],
+    plugins: [],
 };

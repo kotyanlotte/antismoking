@@ -56,7 +56,7 @@ export const FormInput: VFC<FormInputProps> = memo(
                         {error?.map((message, index) => (
                             <li
                                 key={index}
-                                className="indent-sm pl-em before:content-['・']"
+                                className="text-indent-em pl-em before:content-['・']"
                             >
                                 {message}
                             </li>

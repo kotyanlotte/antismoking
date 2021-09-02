@@ -22,3 +22,9 @@
     }
 }
 @tailwind utilities;
+
+@layer utilities {
+    .text-indent-em {
+        text-indent: -1em;
+    }
+}
