@@ -119,6 +119,7 @@ return [
     'attributes' => [
         'name' => 'ニックネーム',
         'email' => 'メールアドレス',
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'password_confirmation' => '確認用パスワード'
     ],
 ];
