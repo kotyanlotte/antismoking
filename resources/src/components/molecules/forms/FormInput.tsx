@@ -51,16 +51,18 @@ export const FormInput: VFC<FormInputProps> = memo(
                     value={value}
                     onChange={onChange}
                 />
-                {error?.map((message, index) => (
-                    <ul
-                        key={index}
-                        className="bg-red-light text-red-dark p-4 mt-2 rounded-md"
-                    >
-                        <li className="indent-sm pl-em before:content-['・']">
-                            {message}
-                        </li>
+                {error && error.length > 0 && (
+                    <ul className="bg-red-light text-red-dark p-4 mt-2 rounded-md">
+                        {error?.map((message, index) => (
+                            <li
+                                key={index}
+                                className="indent-sm pl-em before:content-['・']"
+                            >
+                                {message}
+                            </li>
+                        ))}
                     </ul>
-                ))}
+                )}
             </div>
         );
     }
