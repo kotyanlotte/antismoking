@@ -8,6 +8,7 @@ import {
     emailLoginState,
     passwordLoginState,
 } from "@/components/store/loginValueState";
+import { LoginErrorType } from "@/components/types/loginErrorType";
 
 type LoginReturnType = {
     login: () => Promise<void>;
@@ -32,7 +33,8 @@ export const useLogin = (): LoginReturnType => {
                 toast.success("ログインに成功しました");
                 history.push("/home");
             })
-            .catch(() => {
+            .catch((e: LoginErrorType) => {
+                console.log(e.response.data);
                 toast.error("ログインに失敗しました");
                 history.push("/login");
             })
