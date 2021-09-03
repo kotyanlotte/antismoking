@@ -33,6 +33,7 @@ export const LoginForm: VFC = () => {
                 htmlFor="mail"
                 placeholder="メールアドレスを入力"
                 id="mail"
+                type="mail"
                 value={email}
                 onChange={onChangeEmail}
             >
@@ -42,6 +43,7 @@ export const LoginForm: VFC = () => {
                 htmlFor="password"
                 placeholder="パスワードを入力"
                 id="password"
+                type="password"
                 value={password}
                 onChange={onChangePassword}
             >
