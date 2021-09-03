@@ -5,10 +5,10 @@ import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 import {
-    errorEmailState,
+    errorEmailRegisterState,
     errorNameState,
     errorPasswordConfirmationState,
-    errorPasswordState,
+    errorPasswordRegisterState,
 } from "@/components/store/registerErrorState";
 import {
     emailRegisterState,
@@ -30,10 +30,10 @@ export const useRegister = (): RegisterReturnType => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
-    const setNameError = useSetRecoilState(errorNameState);
-    const setEmailError = useSetRecoilState(errorEmailState);
-    const setPasswordError = useSetRecoilState(errorPasswordState);
-    const setPasswordConfirmationError = useSetRecoilState(
+    const setErrorName = useSetRecoilState(errorNameState);
+    const setErrorEmail = useSetRecoilState(errorEmailRegisterState);
+    const setErrorPassword = useSetRecoilState(errorPasswordRegisterState);
+    const setErrorPasswordConfirmation = useSetRecoilState(
         errorPasswordConfirmationState
     );
     const [loading, setLoading] = useState<boolean>(false);
@@ -53,10 +53,10 @@ export const useRegister = (): RegisterReturnType => {
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {
-                setNameError(e.response.data.errors.name);
-                setEmailError(e.response.data.errors.email);
-                setPasswordError(e.response.data.errors.password);
-                setPasswordConfirmationError(
+                setErrorName(e.response.data.errors.name);
+                setErrorEmail(e.response.data.errors.email);
+                setErrorPassword(e.response.data.errors.password);
+                setErrorPasswordConfirmation(
                     e.response.data.errors.password_confirmation
                 );
                 toast.error("アカウントの登録に失敗しました");
@@ -79,10 +79,10 @@ export const useRegister = (): RegisterReturnType => {
         setName,
         setPassword,
         setPasswordConfirmation,
-        setNameError,
-        setEmailError,
-        setPasswordError,
-        setPasswordConfirmationError,
+        setErrorName,
+        setErrorEmail,
+        setErrorPassword,
+        setErrorPasswordConfirmation,
     ]);
 
     return { register, loading };

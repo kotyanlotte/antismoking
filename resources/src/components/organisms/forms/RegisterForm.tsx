@@ -22,10 +22,10 @@ export const RegisterForm: VFC = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
-    const nameError = useRecoilValue(errorNameState);
-    const emailError = useRecoilValue(errorEmailRegisterState);
-    const passwordError = useRecoilValue(errorPasswordRegisterState);
-    const passwordConfirmationError = useRecoilValue(
+    const errorName = useRecoilValue(errorNameState);
+    const errorEmail = useRecoilValue(errorEmailRegisterState);
+    const errorPassword = useRecoilValue(errorPasswordRegisterState);
+    const errorPasswordConfirmation = useRecoilValue(
         errorPasswordConfirmationState
     );
 
@@ -71,7 +71,7 @@ export const RegisterForm: VFC = () => {
                 name="name"
                 value={name}
                 onChange={onChangeName}
-                error={nameError}
+                error={errorName}
             >
                 ニックネーム
             </FormInput>
@@ -83,7 +83,7 @@ export const RegisterForm: VFC = () => {
                 name="mail"
                 value={email}
                 onChange={onChangeEmail}
-                error={emailError}
+                error={errorEmail}
             >
                 メールアドレス
             </FormInput>
@@ -95,7 +95,7 @@ export const RegisterForm: VFC = () => {
                 name="password"
                 value={password}
                 onChange={onChangePassword}
-                error={passwordError}
+                error={errorPassword}
             >
                 パスワード
             </FormInput>
@@ -107,7 +107,7 @@ export const RegisterForm: VFC = () => {
                 name="password_confirmation"
                 value={passwordConfirmation}
                 onChange={onChangePasswordConfirmation}
-                error={passwordConfirmationError}
+                error={errorPasswordConfirmation}
             >
                 パスワード(確認用)
             </FormInput>
