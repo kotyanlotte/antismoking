@@ -7,7 +7,7 @@ export const HeaderNav: VFC = () => {
         <nav>
             <ul className="flex space-x-3 mt-2">
                 <HeaderLink
-                    to="/signin"
+                    to="/login"
                     style={
                         "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
                     }

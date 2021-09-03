@@ -12,7 +12,7 @@ export const PasswordResetArea: VFC = () => {
                     パスワードのリセット
                 </h2>
                 <PasswordResetForm />
-                <Link to="/signin">
+                <Link to="/login">
                     <PrimaryButton style="text-green-default w-52 md:w-72 border-green-default hover:bg-green-default hover:text-white-default">
                         パスワードの更新
                     </PrimaryButton>

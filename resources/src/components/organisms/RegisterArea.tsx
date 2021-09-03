@@ -16,7 +16,7 @@ export const RegisterArea: VFC = () => {
     return (
         <div className="bg-gray-light py-12 flex justify-center">
             <div className="card w-650 space-y-8">
-                <Link to="/signin">
+                <Link to="/login">
                     <h2 className="text-green-dark font-bold">
                         アカウントを持っている場合
                     </h2>

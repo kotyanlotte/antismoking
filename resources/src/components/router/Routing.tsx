@@ -13,11 +13,11 @@ import { RecoilRoot } from "recoil";
 
 import { About } from "@/components/pages/About";
 import { Home } from "@/components/pages/Home";
+import { Login } from "@/components/pages/Login";
 import { PasswordForgot } from "@/components/pages/PasswordForgot";
 import { PasswordReset } from "@/components/pages/PasswordReset";
 import { Policy } from "@/components/pages/Policy";
 import { Register } from "@/components/pages/Register";
-import { Signin } from "@/components/pages/Signin";
 import { Terms } from "@/components/pages/Terms";
 import { ScrollToTop } from "@/components/utils/ScrollToTop";
 
@@ -29,7 +29,7 @@ export const Routing: VFC = () => {
                 <Switch>
                     <Redirect exact from="/" to="/about" />
                     <Route path="/about" component={About} />
-                    <Route path="/signin" component={Signin} />
+                    <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/terms" component={Terms} />
                     <Route path="/policy" component={Policy} />

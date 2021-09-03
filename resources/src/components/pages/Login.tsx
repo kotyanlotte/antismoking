@@ -2,13 +2,13 @@ import React, { VFC } from "react";
 
 import { Footer } from "@/components/organisms/Footer";
 import { Header } from "@/components/organisms/Header";
-import { SignInArea } from "@/components/organisms/SignInArea";
+import { LoginArea } from "@/components/organisms/LoginArea";
 
-export const Signin: VFC = () => {
+export const Login: VFC = () => {
     return (
         <>
             <Header />
-            <SignInArea />
+            <LoginArea />
             <Footer />
         </>
     );

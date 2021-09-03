@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { LoginForm } from "@/components/organisms/forms/LoginForm";
 
-export const SignInArea: VFC = () => {
+export const LoginArea: VFC = () => {
     return (
         <div className="bg-gray-light py-12 flex justify-center">
             <div className="card w-650 space-y-6">
