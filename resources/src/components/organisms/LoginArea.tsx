@@ -6,7 +6,7 @@ import { useLogin } from "@/components/hooks/useLogin";
 import { LoginForm } from "@/components/organisms/forms/LoginForm";
 
 export const LoginArea: VFC = () => {
-    const { login } = useLogin();
+    const { login, loading } = useLogin();
 
     return (
         <div className="bg-gray-light py-12 flex justify-center">
@@ -23,6 +23,7 @@ export const LoginArea: VFC = () => {
                     </p>
                 </Link>
                 <PrimaryButton
+                    loading={loading}
                     onClick={login}
                     style="text-green-default w-52 border-green-default hover:bg-green-default hover:text-white-default"
                 >

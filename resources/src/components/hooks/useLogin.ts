@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
@@ -11,15 +11,18 @@ import {
 
 type LoginReturnType = {
     login: () => Promise<void>;
+    loading: boolean;
 };
 
 export const useLogin = (): LoginReturnType => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const history = useHistory<History>();
 
     const login = useCallback(async () => {
+        setLoading(true);
         await axios
             .post("/login", {
                 email: email,
@@ -36,8 +39,9 @@ export const useLogin = (): LoginReturnType => {
             .finally(() => {
                 setEmail("");
                 setPassword("");
+                setLoading(false);
             });
     }, [email, password, history, setEmail, setPassword]);
 
-    return { login };
+    return { login, loading };
 };
