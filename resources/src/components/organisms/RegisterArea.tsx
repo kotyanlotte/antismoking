@@ -21,7 +21,6 @@ export const RegisterArea: VFC = () => {
                     loading={loading}
                     style="text-green-default w-52 border-green-default hover:bg-green-default hover:text-white-default"
                     onClick={register}
-                    id={"register"}
                 >
                     登録
                 </PrimaryButton>

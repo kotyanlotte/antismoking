@@ -62,7 +62,7 @@ export const RegisterForm: VFC = () => {
     );
 
     return (
-        <form className="space-y-9" id="register">
+        <form className="space-y-9">
             <FormInput
                 htmlFor="name"
                 type="text"
