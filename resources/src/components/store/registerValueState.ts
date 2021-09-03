@@ -5,13 +5,13 @@ export const nameState = atom<string>({
     default: "",
 });
 
-export const emailState = atom<string>({
-    key: "emailState",
+export const emailRegisterState = atom<string>({
+    key: "emailRegisterState",
     default: "",
 });
 
-export const passwordState = atom<string>({
-    key: "passwordState",
+export const passwordRegisterState = atom<string>({
+    key: "passwordRegisterState",
     default: "",
 });
 
