@@ -1,7 +1,11 @@
 import React, { useCallback, VFC } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
+import {
+    errorEmailLoginState,
+    errorPasswordLoginState,
+} from "@/components/store/loginErrorState";
 import {
     emailLoginState,
     passwordLoginState,
@@ -10,6 +14,8 @@ import {
 export const LoginForm: VFC = () => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
+    const errorEmail = useRecoilValue(errorEmailLoginState);
+    const errorPassword = useRecoilValue(errorPasswordLoginState);
 
     // メールアドレスを取得する関数
     const onChangeEmail = useCallback(
@@ -36,6 +42,7 @@ export const LoginForm: VFC = () => {
                 type="mail"
                 value={email}
                 onChange={onChangeEmail}
+                error={errorEmail}
             >
                 メールアドレス
             </FormInput>
@@ -46,6 +53,7 @@ export const LoginForm: VFC = () => {
                 type="password"
                 value={password}
                 onChange={onChangePassword}
+                error={errorPassword}
             >
                 パスワード
             </FormInput>
