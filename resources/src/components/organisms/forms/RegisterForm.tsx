@@ -3,10 +3,10 @@ import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
 import {
-    errorEmailState,
+    errorEmailRegisterState,
     errorNameState,
     errorPasswordConfirmationState,
-    errorPasswordState,
+    errorPasswordRegisterState,
 } from "@/components/store/registerErrorState";
 import {
     emailRegisterState,
@@ -23,8 +23,8 @@ export const RegisterForm: VFC = () => {
         passwordConfirmationState
     );
     const nameError = useRecoilValue(errorNameState);
-    const emailError = useRecoilValue(errorEmailState);
-    const passwordError = useRecoilValue(errorPasswordState);
+    const emailError = useRecoilValue(errorEmailRegisterState);
+    const passwordError = useRecoilValue(errorPasswordRegisterState);
     const passwordConfirmationError = useRecoilValue(
         errorPasswordConfirmationState
     );

@@ -5,13 +5,13 @@ export const errorNameState = atom<string[]>({
     default: [],
 });
 
-export const errorEmailState = atom<string[]>({
-    key: "errorEmailState",
+export const errorEmailRegisterState = atom<string[]>({
+    key: "errorEmailRegisterState",
     default: [],
 });
 
-export const errorPasswordState = atom<string[]>({
-    key: "errorPasswordState",
+export const errorPasswordRegisterState = atom<string[]>({
+    key: "errorPasswordRegisterState",
     default: [],
 });
 
