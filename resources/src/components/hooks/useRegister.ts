@@ -18,12 +18,12 @@ import {
 } from "@/components/store/registerValueState";
 import { RegisterErrorType } from "@/components/types/registerErrorType";
 
-type UserRegisterReturnType = {
-    registerUser: () => Promise<void>;
+type RegisterReturnType = {
+    register: () => Promise<void>;
     loading: boolean;
 };
 
-export const useRegisterUser = (): UserRegisterReturnType => {
+export const useRegister = (): RegisterReturnType => {
     const [name, setName] = useRecoilState(nameState);
     const [email, setEmail] = useRecoilState(emailRegisterState);
     const [password, setPassword] = useRecoilState(passwordRegisterState);
@@ -39,7 +39,7 @@ export const useRegisterUser = (): UserRegisterReturnType => {
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
-    const registerUser = useCallback(async () => {
+    const register = useCallback(async () => {
         setLoading(true);
         await axios
             .post("/register", {
@@ -85,5 +85,5 @@ export const useRegisterUser = (): UserRegisterReturnType => {
         setPasswordConfirmationError,
     ]);
 
-    return { registerUser, loading };
+    return { register, loading };
 };

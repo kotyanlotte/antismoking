@@ -2,16 +2,16 @@ import React, { useCallback, VFC } from "react";
 import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
-import { useRegisterUser } from "@/components/hooks/useRegisterUser";
+import { useRegister } from "@/components/hooks/useRegister";
 import { RegisterForm } from "@/components/organisms/forms/RegisterForm";
 
 export const RegisterArea: VFC = () => {
-    const { registerUser, loading } = useRegisterUser();
+    const { register, loading } = useRegister();
 
     // ユーザーを登録する関数
-    const onClickRegisterUser = useCallback(() => {
-        registerUser();
-    }, [registerUser]);
+    const onClickRegister = useCallback(() => {
+        register();
+    }, [register]);
 
     return (
         <div className="bg-gray-light py-12 flex justify-center">
@@ -25,7 +25,7 @@ export const RegisterArea: VFC = () => {
                 <PrimaryButton
                     loading={loading}
                     style="text-green-default w-52 border-green-default hover:bg-green-default hover:text-white-default"
-                    onClick={onClickRegisterUser}
+                    onClick={onClickRegister}
                     id={"register"}
                 >
                     登録
