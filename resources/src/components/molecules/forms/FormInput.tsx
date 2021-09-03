@@ -8,8 +8,6 @@ type FormInputProps = {
     htmlFor: string;
     type?: string;
     placeholder: string;
-    id: string;
-    name?: string;
     children: string;
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -17,17 +15,7 @@ type FormInputProps = {
 };
 
 export const FormInput: VFC<FormInputProps> = memo(
-    ({
-        htmlFor,
-        placeholder,
-        id,
-        type,
-        name,
-        children,
-        value,
-        onChange,
-        error,
-    }) => {
+    ({ htmlFor, placeholder, type, children, value, onChange, error }) => {
         const location = useLocation<LocationType>();
 
         return (
@@ -46,8 +34,6 @@ export const FormInput: VFC<FormInputProps> = memo(
                 <Input
                     placeholder={placeholder}
                     type={type}
-                    id={id}
-                    name={name}
                     value={value}
                     onChange={onChange}
                 />

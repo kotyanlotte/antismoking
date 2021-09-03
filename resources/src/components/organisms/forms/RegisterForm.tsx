@@ -67,8 +67,6 @@ export const RegisterForm: VFC = () => {
                 htmlFor="name"
                 type="text"
                 placeholder="ニックネームを入力"
-                id="name"
-                name="name"
                 value={name}
                 onChange={onChangeName}
                 error={errorName}
@@ -79,8 +77,6 @@ export const RegisterForm: VFC = () => {
                 htmlFor="mail"
                 type="email"
                 placeholder="メールアドレスを入力"
-                id="mail"
-                name="mail"
                 value={email}
                 onChange={onChangeEmail}
                 error={errorEmail}
@@ -91,8 +87,6 @@ export const RegisterForm: VFC = () => {
                 htmlFor="password"
                 type="password"
                 placeholder="パスワードを入力"
-                id="password"
-                name="password"
                 value={password}
                 onChange={onChangePassword}
                 error={errorPassword}
@@ -103,8 +97,6 @@ export const RegisterForm: VFC = () => {
                 htmlFor="passwordConfirmation"
                 type="password"
                 placeholder="上記と同じパスワードを入力"
-                id="passwordConfirmation"
-                name="password_confirmation"
                 value={passwordConfirmation}
                 onChange={onChangePasswordConfirmation}
                 error={errorPasswordConfirmation}
