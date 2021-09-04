@@ -50,24 +50,23 @@ export const useRegister = (): RegisterReturnType => {
             })
             .then(() => {
                 toast.success("アカウントの登録に成功しました");
+                setLoading(false);
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {
+                setName("");
+                setEmail("");
+                setPassword("");
+                setPasswordConfirmation("");
                 setErrorName(e.response.data.errors.name);
                 setErrorEmail(e.response.data.errors.email);
                 setErrorPassword(e.response.data.errors.password);
                 setErrorPasswordConfirmation(
                     e.response.data.errors.password_confirmation
                 );
+                setLoading(false);
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
-            })
-            .finally(() => {
-                setLoading(false);
-                setName("");
-                setEmail("");
-                setPassword("");
-                setPasswordConfirmation("");
             });
     }, [
         name,

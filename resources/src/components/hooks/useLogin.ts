@@ -37,18 +37,17 @@ export const useLogin = (): LoginReturnType => {
             })
             .then(() => {
                 toast.success("ログインに成功しました");
+                setLoading(false);
                 history.push("/home");
             })
             .catch((e: LoginErrorType) => {
-                setErrorEmail(e.response.data.errors.email);
-                setErrorPassword(e.response.data.errors.password);
-                toast.error("ログインに失敗しました");
-                history.push("/login");
-            })
-            .finally(() => {
                 setEmail("");
                 setPassword("");
+                setErrorEmail(e.response.data.errors.email);
+                setErrorPassword(e.response.data.errors.password);
                 setLoading(false);
+                toast.error("ログインに失敗しました");
+                history.push("/login");
             });
     }, [
         email,
