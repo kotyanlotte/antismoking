@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback } from "react";
+import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useSetRecoilState } from "recoil";
 
@@ -12,6 +13,7 @@ type GetUserType = {
 
 export const UseGetLoginUser = (): GetUserType => {
     const setUser = useSetRecoilState(loginUserState);
+    const history = useHistory<History>();
 
     const getUser = useCallback(async () => {
         await axios
@@ -20,9 +22,12 @@ export const UseGetLoginUser = (): GetUserType => {
                 setUser(res.data);
             })
             .catch(() => {
-                // toast.error('ユーザーが見つかりません')
+                toast.error(
+                    "ユーザーが見つかりません、再度ログインしてください"
+                );
+                history.push("/login");
             });
-    }, [setUser]);
+    }, [setUser, history]);
 
     return { getUser };
 };
