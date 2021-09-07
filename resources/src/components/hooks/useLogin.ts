@@ -30,25 +30,27 @@ export const useLogin = (): LoginReturnType => {
 
     const login = useCallback(async () => {
         setLoading(true);
-        await axios
-            .post("/login", {
-                email: email,
-                password: password,
-            })
-            .then(() => {
-                toast.success("ログインに成功しました");
-                setLoading(false);
-                history.push("/home");
-            })
-            .catch((e: LoginErrorType) => {
-                setEmail("");
-                setPassword("");
-                setErrorEmail(e.response.data.errors.email);
-                setErrorPassword(e.response.data.errors.password);
-                setLoading(false);
-                toast.error("ログインに失敗しました");
-                history.push("/login");
-            });
+        await axios.get("/sanctum/csrf-cookie").then(() => {
+            axios
+                .post("/login", {
+                    email: email,
+                    password: password,
+                })
+                .then(() => {
+                    toast.success("ログインに成功しました");
+                    setLoading(false);
+                    history.push("/home");
+                })
+                .catch((e: LoginErrorType) => {
+                    setEmail("");
+                    setPassword("");
+                    setErrorEmail(e.response.data.errors.email);
+                    setErrorPassword(e.response.data.errors.password);
+                    setLoading(false);
+                    toast.error("ログインに失敗しました");
+                    history.push("/login");
+                });
+        });
     }, [
         email,
         password,
