@@ -11,6 +11,7 @@ import {
 import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 
+import { AuthUser } from "@/components/organisms/AuthUser";
 import { About } from "@/components/pages/About";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
@@ -35,7 +36,10 @@ export const Routing: VFC = () => {
                     <Route path="/policy" component={Policy} />
                     <Route path="/password/forgot" component={PasswordForgot} />
                     <Route path="/password/reset" component={PasswordReset} />
-                    <Route path="/home" component={Home} />
+
+                    <AuthUser>
+                        <Route path="/home" component={Home} />
+                    </AuthUser>
                 </Switch>
                 <ToastContainer position="top-center" autoClose={3000} />
             </RecoilRoot>
