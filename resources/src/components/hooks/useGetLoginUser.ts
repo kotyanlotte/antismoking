@@ -11,7 +11,7 @@ type GetUserType = {
     getUser: () => Promise<void>;
 };
 
-export const UseGetLoginUser = (): GetUserType => {
+export const useGetLoginUser = (): GetUserType => {
     const setUser = useSetRecoilState(loginUserState);
     const history = useHistory<History>();
 
