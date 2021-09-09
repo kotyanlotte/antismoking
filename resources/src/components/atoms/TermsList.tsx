@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { memo, VFC } from "react";
 
 type TermsListProps = {
     description: {
@@ -8,7 +8,7 @@ type TermsListProps = {
     };
 };
 
-export const TermsList: VFC<TermsListProps> = ({ description }) => {
+export const TermsList: VFC<TermsListProps> = memo(({ description }) => {
     return (
         <div className="mb-5">
             <h2 className="font-bold text-xl mb-3 flex justify-center">
@@ -24,4 +24,6 @@ export const TermsList: VFC<TermsListProps> = ({ description }) => {
             </ol>
         </div>
     );
-};
+});
+
+TermsList.displayName = "TermsList";

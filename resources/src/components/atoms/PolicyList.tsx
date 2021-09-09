@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { memo, VFC } from "react";
 
 type PolicyListProps = {
     description: {
@@ -8,7 +8,7 @@ type PolicyListProps = {
     };
 };
 
-export const PolicyList: VFC<PolicyListProps> = ({ description }) => {
+export const PolicyList: VFC<PolicyListProps> = memo(({ description }) => {
     return (
         <div className="mb-5">
             <h2 className="font-bold text-xl mb-3 flex justify-center">
@@ -24,4 +24,6 @@ export const PolicyList: VFC<PolicyListProps> = ({ description }) => {
             </ol>
         </div>
     );
-};
+});
+
+PolicyList.displayName = "PolicyList";

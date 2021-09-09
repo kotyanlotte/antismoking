@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { memo, VFC } from "react";
 import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
@@ -9,10 +9,12 @@ type HeaderLinkProps = {
     text: string;
 };
 
-export const HeaderLink: VFC<HeaderLinkProps> = ({ to, style, text }) => {
+export const HeaderLink: VFC<HeaderLinkProps> = memo(({ to, style, text }) => {
     return (
         <Link to={to}>
             <PrimaryButton style={style}>{text}</PrimaryButton>
         </Link>
     );
-};
+});
+
+HeaderLink.displayName = "HeaderLink";
