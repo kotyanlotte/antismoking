@@ -6,6 +6,7 @@ import {
     loadingState,
     loginUserState,
 } from "@/components/store/loginUserState";
+import { Loading } from "@/components/utils/Loading";
 
 type AuthUserType = {
     children: React.ReactNode;
@@ -18,7 +19,7 @@ export const AuthUser: VFC<AuthUserType> = memo(({ children }) => {
     const location = useLocation<Location>();
 
     return loading ? (
-        <h1>Loading</h1>
+        <Loading />
     ) : user ? (
         <>{children}</>
     ) : (
