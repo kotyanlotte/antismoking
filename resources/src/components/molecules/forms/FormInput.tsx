@@ -2,7 +2,6 @@ import React, { memo, VFC } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Input } from "@/components/atoms/inputs/Input";
-import { LocationType } from "@/components/types";
 
 type FormInputProps = {
     htmlFor: string;
@@ -16,7 +15,7 @@ type FormInputProps = {
 
 export const FormInput: VFC<FormInputProps> = memo(
     ({ htmlFor, placeholder, type, children, value, onChange, error }) => {
-        const location = useLocation<LocationType>();
+        const location = useLocation<Location>();
 
         return (
             <div className="w-inputWidth">
