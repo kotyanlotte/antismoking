@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { useGetLoginUser } from "@/components/hooks/useGetLoginUser";
 import {
     errorEmailRegisterState,
     errorNameState,
@@ -30,14 +31,18 @@ export const useRegister = (): RegisterReturnType => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
+
     const setErrorName = useSetRecoilState(errorNameState);
     const setErrorEmail = useSetRecoilState(errorEmailRegisterState);
     const setErrorPassword = useSetRecoilState(errorPasswordRegisterState);
     const setErrorPasswordConfirmation = useSetRecoilState(
         errorPasswordConfirmationState
     );
+
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
+
+    const { getUser } = useGetLoginUser();
 
     const register = useCallback(async () => {
         setLoading(true);
@@ -50,6 +55,7 @@ export const useRegister = (): RegisterReturnType => {
             })
             .then(() => {
                 toast.success("アカウントの登録に成功しました");
+                getUser();
                 setLoading(false);
                 history.push("/home");
             })
@@ -68,21 +74,7 @@ export const useRegister = (): RegisterReturnType => {
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             });
-    }, [
-        name,
-        email,
-        password,
-        passwordConfirmation,
-        history,
-        setEmail,
-        setName,
-        setPassword,
-        setPasswordConfirmation,
-        setErrorName,
-        setErrorEmail,
-        setErrorPassword,
-        setErrorPasswordConfirmation,
-    ]);
+    }, [name, email, password, passwordConfirmation]);
 
     return { register, loading };
 };

@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useCallback } from "react";
-import { useHistory } from "react-router-dom/";
-import { toast } from "react-toastify";
 import { useSetRecoilState } from "recoil";
 
-import { loginUserState } from "@/components/store/loginUserState";
+import {
+    loadingState,
+    loginUserState,
+} from "@/components/store/loginUserState";
 import { User } from "@/components/types/user";
 
 type GetUserType = {
@@ -13,21 +14,21 @@ type GetUserType = {
 
 export const useGetLoginUser = (): GetUserType => {
     const setUser = useSetRecoilState(loginUserState);
-    const history = useHistory<History>();
+    const setLoading = useSetRecoilState(loadingState);
 
     const getUser = useCallback(async () => {
+        setLoading(true);
         await axios
             .get<User>("api/user")
             .then((res) => {
+                setLoading(false);
                 setUser(res.data);
             })
             .catch(() => {
-                toast.error(
-                    "ユーザーが見つかりません、再度ログインしてください"
-                );
-                history.push("/login");
+                setLoading(false);
+                setUser(null);
             });
-    }, [setUser, history]);
+    }, []);
 
     return { getUser };
 };

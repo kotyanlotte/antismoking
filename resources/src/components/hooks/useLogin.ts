@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { useGetLoginUser } from "@/components/hooks/useGetLoginUser";
 import {
     errorEmailLoginState,
     errorPasswordLoginState,
@@ -22,11 +23,14 @@ type LoginReturnType = {
 export const useLogin = (): LoginReturnType => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
+
     const setErrorEmail = useSetRecoilState(errorEmailLoginState);
     const setErrorPassword = useSetRecoilState(errorPasswordLoginState);
-    const [loading, setLoading] = useState<boolean>(false);
 
+    const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
+
+    const { getUser } = useGetLoginUser();
 
     const login = useCallback(async () => {
         setLoading(true);
@@ -39,6 +43,7 @@ export const useLogin = (): LoginReturnType => {
                 .then(() => {
                     toast.success("ログインに成功しました");
                     setLoading(false);
+                    getUser();
                     history.push("/home");
                 })
                 .catch((e: LoginErrorType) => {
@@ -51,15 +56,7 @@ export const useLogin = (): LoginReturnType => {
                     history.push("/login");
                 });
         });
-    }, [
-        email,
-        password,
-        history,
-        setEmail,
-        setPassword,
-        setErrorEmail,
-        setErrorPassword,
-    ]);
+    }, [email, password]);
 
     return { login, loading };
 };

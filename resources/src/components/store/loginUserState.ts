@@ -6,3 +6,8 @@ export const loginUserState = atom<User | null>({
     key: "loginUserState",
     default: null,
 });
+
+export const loadingState = atom<boolean>({
+    key: "loadingState",
+    default: false,
+});
