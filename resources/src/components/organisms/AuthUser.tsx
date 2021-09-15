@@ -3,8 +3,8 @@ import { Redirect, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
 import {
+    isLoggedInState,
     loadingState,
-    loginUserState,
 } from "@/components/store/loginUserState";
 import { Loading } from "@/components/utils/Loading";
 
@@ -13,14 +13,14 @@ type AuthUserType = {
 };
 
 export const AuthUser: VFC<AuthUserType> = memo(({ children }) => {
-    const user = useRecoilValue(loginUserState);
     const loading = useRecoilValue(loadingState);
+    const isLoggedIn = useRecoilValue(isLoggedInState);
 
     const location = useLocation<Location>();
 
     return loading ? (
         <Loading />
-    ) : user ? (
+    ) : isLoggedIn ? (
         <>{children}</>
     ) : (
         <Redirect to={{ pathname: "/login", state: { from: location } }} />

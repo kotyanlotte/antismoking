@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { useGetLoginUser } from "@/components/hooks/useGetLoginUser";
+import { isLoggedInState } from "@/components/store/loginUserState";
 import {
     errorEmailRegisterState,
     errorNameState,
@@ -38,11 +38,10 @@ export const useRegister = (): RegisterReturnType => {
     const setErrorPasswordConfirmation = useSetRecoilState(
         errorPasswordConfirmationState
     );
+    const setIsLoggedIn = useSetRecoilState(isLoggedInState);
 
     const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
-
-    const { getUser } = useGetLoginUser();
 
     const register = useCallback(async () => {
         setLoading(true);
@@ -55,8 +54,8 @@ export const useRegister = (): RegisterReturnType => {
             })
             .then(() => {
                 toast.success("アカウントの登録に成功しました");
-                getUser();
                 setLoading(false);
+                setIsLoggedIn(true);
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {
