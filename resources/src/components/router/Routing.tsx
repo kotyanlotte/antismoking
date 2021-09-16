@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 
 import { AuthUser } from "@/components/organisms/AuthUser";
+import { NotLoggedInUser } from "@/components/organisms/NotLoggedInUser";
 import { About } from "@/components/pages/About";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
@@ -31,16 +32,17 @@ export const Routing: VFC = () => {
                 <Switch>
                     <Redirect exact from="/" to="/about" />
                     <Route path="/about" component={About} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
                     <Route path="/terms" component={Terms} />
                     <Route path="/policy" component={Policy} />
                     <Route path="/password/forgot" component={PasswordForgot} />
                     <Route path="/password/reset" component={PasswordReset} />
 
-                    <AuthUser>
-                        <Route path="/home" component={Home} />
-                    </AuthUser>
+                    {/* 未ログインでアクセス可能 */}
+                    <NotLoggedInUser path="/login" component={Login} />
+                    <NotLoggedInUser path="/register" component={Register} />
+
+                    {/* ログイン済みでアクセス可能 */}
+                    <AuthUser path="/home" component={Home} />
                 </Switch>
                 <ToastContainer position="top-center" autoClose={3000} />
             </RecoilRoot>
