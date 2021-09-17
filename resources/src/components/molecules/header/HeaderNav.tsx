@@ -1,23 +1,17 @@
 import React, { VFC } from "react";
+import { useRecoilValue } from "recoil";
 
-import { HeaderLink } from "@/components/molecules/header/HeaderLink";
+import { LoginHeaderLink } from "@/components/molecules/header/headerLinks/LoginHeaderLink";
+import { NoLoginHeaderLink } from "@/components/molecules/header/headerLinks/NoLoginHeaderLink";
+import { isLoggedInState } from "@/components/store/loginUserState";
 
 export const HeaderNav: VFC = () => {
+    const isLoggedIn = useRecoilValue(isLoggedInState);
+
     return (
         <nav>
             <ul className="flex space-x-3 mt-2">
-                <HeaderLink
-                    to="/login"
-                    style={
-                        "text-green-default border-green-default hover:bg-green-default hover:text-white-default"
-                    }
-                    text="ログイン"
-                />
-                <HeaderLink
-                    to="/register"
-                    style="bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark"
-                    text="新規登録"
-                />
+                {isLoggedIn ? <LoginHeaderLink /> : <NoLoginHeaderLink />}
             </ul>
         </nav>
     );
