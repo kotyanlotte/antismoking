@@ -1,11 +1,26 @@
+import cc from "classcat";
 import React, { VFC } from "react";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 
 import { HeaderNav } from "@/components/molecules/header/HeaderNav";
+import { isLoggedInState } from "@/components/store/loginUserState";
 
 export const Header: VFC = () => {
+    const isLoggedIn = useRecoilValue(isLoggedInState);
+
     return (
-        <header className="h-28 w-11/12 mx-auto flex flex-col items-center pt-2 surface:h-24 surface:flex-row surface:items-center surface:pt-0 surface:justify-between">
+        <header
+            className={cc([
+                "w-11/12 mx-auto flex flex-col items-center pt-2 ",
+                {
+                    "h-56 surface:h-28 lg:flex-row lg:pt-0 lg:justify-between":
+                        isLoggedIn,
+                    "h-28 surface:h-24 surface:flex-row surface:pt-0 surface:justify-between":
+                        !isLoggedIn,
+                },
+            ])}
+        >
             <Link to="about">
                 <span className="text-4xl md:text-5xl">Anti</span>
                 <span className="text-4xl text-green-default md:text-5xl">

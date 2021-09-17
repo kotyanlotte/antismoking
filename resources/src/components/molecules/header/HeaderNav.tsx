@@ -1,3 +1,4 @@
+import cc from "classcat";
 import React, { VFC } from "react";
 import { useRecoilValue } from "recoil";
 
@@ -10,7 +11,16 @@ export const HeaderNav: VFC = () => {
 
     return (
         <nav>
-            <ul className="flex space-x-3 mt-2">
+            <ul
+                className={cc([
+                    "flex mt-2",
+                    {
+                        "flex-col space-y-3 surface:flex-row surface:justify-center surface:space-y-0 surface:space-x-3":
+                            isLoggedIn,
+                        "flex-row space-x-3 surface:mt-0": !isLoggedIn,
+                    },
+                ])}
+            >
                 {isLoggedIn ? <LoginHeaderLink /> : <NoLoginHeaderLink />}
             </ul>
         </nav>
