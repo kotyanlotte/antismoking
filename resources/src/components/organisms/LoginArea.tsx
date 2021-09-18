@@ -17,7 +17,7 @@ export const LoginArea: VFC = () => {
                     </h2>
                 </Link>
                 <LoginForm />
-                <Link to="/password/forgot">
+                <Link to="/forgot-password">
                     <p className="text-green-dark font-bold ">
                         パスワードを忘れた場合
                     </p>

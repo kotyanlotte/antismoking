@@ -15,9 +15,9 @@ import { RecoilRoot } from "recoil";
 import { AuthUser } from "@/components/organisms/AuthUser";
 import { NotLoggedInUser } from "@/components/organisms/NotLoggedInUser";
 import { About } from "@/components/pages/About";
+import { ForgotPassword } from "@/components/pages/ForgotPassword";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
-import { PasswordForgot } from "@/components/pages/PasswordForgot";
 import { PasswordReset } from "@/components/pages/PasswordReset";
 import { Policy } from "@/components/pages/Policy";
 import { Register } from "@/components/pages/Register";
@@ -34,7 +34,7 @@ export const Routing: VFC = () => {
                     <Route path="/about" component={About} />
                     <Route path="/terms" component={Terms} />
                     <Route path="/policy" component={Policy} />
-                    <Route path="/password/forgot" component={PasswordForgot} />
+                    <Route path="/forgot-password" component={ForgotPassword} />
                     <Route path="/password/reset" component={PasswordReset} />
 
                     {/* 未ログインでアクセス可能 */}
