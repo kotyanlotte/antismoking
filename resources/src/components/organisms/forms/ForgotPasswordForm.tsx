@@ -5,8 +5,8 @@ import { FormInput } from "@/components/molecules/forms/FormInput";
 export const ForgotPasswordForm: VFC = () => {
     return (
         <form>
-            <FormInput htmlFor="password" placeholder="パスワードを入力">
-                パスワード
+            <FormInput htmlFor="email" placeholder="メールアドレスを入力">
+                メールアドレス
             </FormInput>
         </form>
     );
