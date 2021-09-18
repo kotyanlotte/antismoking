@@ -9,6 +9,7 @@ export const ForgotPasswordForm: VFC = () => {
                 htmlFor="email"
                 placeholder="メールアドレスを入力"
                 type="mail"
+                value={email}
             >
                 メールアドレス
             </FormInput>
