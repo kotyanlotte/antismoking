@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, VFC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
@@ -22,7 +23,7 @@ export const LoginForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
         },
-        [setEmail]
+        []
     );
 
     // パスワードを取得する関数
@@ -30,7 +31,7 @@ export const LoginForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
         },
-        [setPassword]
+        []
     );
 
     return (

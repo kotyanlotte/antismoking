@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useCallback } from "react";
 import { useHistory } from "react-router-dom/";
@@ -74,7 +75,7 @@ export const useRegister = (): RegisterReturnType => {
                 toast.error("アカウントの登録に失敗しました");
                 history.push("/register");
             });
-    }, [name, email, password, passwordConfirmation]);
+    }, [name, email, password, passwordConfirmation, history]);
 
     return { register, loading };
 };

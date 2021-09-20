@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useCallback } from "react";
 import { useHistory } from "react-router-dom/";
@@ -56,7 +57,7 @@ export const useLogin = (): LoginReturnType => {
                     history.push("/login");
                 });
         });
-    }, [email, password]);
+    }, [email, password, history]);
 
     return { login, loading };
 };

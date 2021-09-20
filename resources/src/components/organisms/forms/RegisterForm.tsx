@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, VFC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
@@ -34,7 +35,7 @@ export const RegisterForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setName(e.target.value);
         },
-        [setName]
+        []
     );
 
     // メールアドレスを取得する関数
@@ -42,7 +43,7 @@ export const RegisterForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setEmail(e.target.value);
         },
-        [setEmail]
+        []
     );
 
     // パスワードを取得する関数
@@ -50,7 +51,7 @@ export const RegisterForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
         },
-        [setPassword]
+        []
     );
 
     // 再確認用パスワードを取得する関数
@@ -58,7 +59,7 @@ export const RegisterForm: VFC = () => {
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setPasswordConfirmation(e.target.value);
         },
-        [setPasswordConfirmation]
+        []
     );
 
     return (
