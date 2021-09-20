@@ -5,7 +5,7 @@ import { useResetLink } from "@/components/hooks/useResetLink";
 import { ForgotPasswordForm } from "@/components/organisms/forms/ForgotPasswordForm";
 
 export const ForgotPasswordArea: VFC = () => {
-    const { resetLink } = useResetLink();
+    const { resetLink, loading } = useResetLink();
 
     return (
         <div className="bg-gray-light py-12 flex justify-center">
@@ -14,6 +14,7 @@ export const ForgotPasswordArea: VFC = () => {
                 <PrimaryButton
                     style="text-green-default w-52 surface:w-72 border-green-default hover:bg-green-default hover:text-white-default"
                     onClick={resetLink}
+                    loading={loading}
                 >
                     リセットリンクの送信
                 </PrimaryButton>
