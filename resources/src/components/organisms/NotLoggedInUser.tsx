@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { isLoggedInState } from "@/components/store/loginUserState";
 
 type NotLoggedInUserProps = {
-    path: "/register" | "/login";
+    path: "/register" | "/login" | "/forgot-password";
     component: React.VFC;
 };
 

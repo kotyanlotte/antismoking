@@ -34,12 +34,15 @@ export const Routing: VFC = () => {
                     <Route path="/about" component={About} />
                     <Route path="/terms" component={Terms} />
                     <Route path="/policy" component={Policy} />
-                    <Route path="/forgot-password" component={ForgotPassword} />
                     <Route path="/password/reset" component={PasswordReset} />
 
                     {/* 未ログインでアクセス可能 */}
                     <NotLoggedInUser path="/login" component={Login} />
                     <NotLoggedInUser path="/register" component={Register} />
+                    <NotLoggedInUser
+                        path="/forgot-password"
+                        component={ForgotPassword}
+                    />
 
                     {/* ログイン済みでアクセス可能 */}
                     <AuthUser path="/home" component={Home} />
