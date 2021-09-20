@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { isLoadingButton } from "@/components/store/buttonSpinner";
 import {
     errorEmailLoginState,
     errorPasswordLoginState,
@@ -23,12 +24,12 @@ type LoginReturnType = {
 export const useLogin = (): LoginReturnType => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const setErrorEmail = useSetRecoilState(errorEmailLoginState);
     const setErrorPassword = useSetRecoilState(errorPasswordLoginState);
     const setIsLoggedIn = useSetRecoilState(isLoggedInState);
 
-    const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
     const login = useCallback(async () => {

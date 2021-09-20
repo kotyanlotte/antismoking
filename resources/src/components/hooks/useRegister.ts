@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useHistory } from "react-router-dom/";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { isLoadingButton } from "@/components/store/buttonSpinner";
 import { isLoggedInState } from "@/components/store/loginUserState";
 import {
     errorEmailRegisterState,
@@ -31,6 +32,7 @@ export const useRegister = (): RegisterReturnType => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const setErrorName = useSetRecoilState(errorNameState);
     const setErrorEmail = useSetRecoilState(errorEmailRegisterState);
@@ -40,7 +42,6 @@ export const useRegister = (): RegisterReturnType => {
     );
     const setIsLoggedIn = useSetRecoilState(isLoggedInState);
 
-    const [loading, setLoading] = useState<boolean>(false);
     const history = useHistory<History>();
 
     const register = useCallback(async () => {
