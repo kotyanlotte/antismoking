@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
 
-export const PasswordResetForm: VFC = () => {
+export const ResetPasswordForm: VFC = () => {
     return (
         <form className="space-y-9">
             <FormInput htmlFor="mail" placeholder="メールアドレスを入力">

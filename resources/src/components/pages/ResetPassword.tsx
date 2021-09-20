@@ -2,13 +2,13 @@ import React, { VFC } from "react";
 
 import { Footer } from "@/components/organisms/Footer";
 import { Header } from "@/components/organisms/Header";
-import { PasswordResetArea } from "@/components/organisms/PasswordResetArea";
+import { ResetPasswordArea } from "@/components/organisms/ResetPasswordArea";
 
-export const PasswordReset: VFC = () => {
+export const ResetPassword: VFC = () => {
     return (
         <>
             <Header />
-            <PasswordResetArea />
+            <ResetPasswordArea />
             <Footer />
         </>
     );

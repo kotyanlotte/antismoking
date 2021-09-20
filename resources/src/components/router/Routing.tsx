@@ -18,9 +18,9 @@ import { About } from "@/components/pages/About";
 import { ForgotPassword } from "@/components/pages/ForgotPassword";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
-import { PasswordReset } from "@/components/pages/PasswordReset";
 import { Policy } from "@/components/pages/Policy";
 import { Register } from "@/components/pages/Register";
+import { ResetPassword } from "@/components/pages/ResetPassword";
 import { Terms } from "@/components/pages/Terms";
 import { ScrollToTop } from "@/components/utils/ScrollToTop";
 
@@ -34,7 +34,7 @@ export const Routing: VFC = () => {
                     <Route path="/about" component={About} />
                     <Route path="/terms" component={Terms} />
                     <Route path="/policy" component={Policy} />
-                    <Route path="/password/reset" component={PasswordReset} />
+                    <Route path="/reset-password" component={ResetPassword} />
 
                     {/* 未ログインでアクセス可能 */}
                     <NotLoggedInUser path="/login" component={Login} />
