@@ -36,9 +36,13 @@ export const useResetLink = (): ResetLinkReturnType => {
                 setEmail("");
             })
             .catch((e: ResetLinkEmailErrorType) => {
+                console.log(e.response);
                 setLoading(false);
                 setEmail("");
                 setErrorEmail(e.response.data.errors.email);
+                toast.error(
+                    "パスワードリセットリンクを発行することが出来ませんでした。"
+                );
             });
     }, [email, history]);
 
