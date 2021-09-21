@@ -2,13 +2,19 @@ import axios from "axios";
 import { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
+import {
+    resetPasswordConfirmationErrorState,
+    resetPasswordEmailErrorState,
+    resetPasswordErrorState,
+} from "@/components/store/resetPasswordErrorState";
 import {
     resetPasswordConfirmationState,
     resetPasswordEmailState,
     resetPasswordState,
 } from "@/components/store/resetPasswordState";
+import { resetPasswordErrorType } from "@/components/types/resetPasswordErrorType";
 
 type ResetPasswordReturnType = {
     resetPassword: () => void;
@@ -20,8 +26,14 @@ export const useResetPassword = (): ResetPasswordReturnType => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         resetPasswordConfirmationState
     );
+
+    const setErrorEmail = useSetRecoilState(resetPasswordEmailErrorState);
+    const setErrorPassword = useSetRecoilState(resetPasswordErrorState);
+    const setErrorPasswordConfirmation = useSetRecoilState(
+        resetPasswordConfirmationErrorState
+    );
+
     const { token } = useParams<Record<string, string | undefined>>();
-    console.log(token);
 
     const resetPassword = useCallback(async () => {
         await axios
@@ -34,8 +46,12 @@ export const useResetPassword = (): ResetPasswordReturnType => {
             .then((res: any) => {
                 console.log(res);
             })
-            .catch((e) => {
-                console.log(e.response);
+            .catch((e: resetPasswordErrorType) => {
+                setErrorEmail(e.response.data.errors.email);
+                setErrorPassword(e.response.data.errors.password);
+                setErrorPasswordConfirmation(
+                    e.response.data.errors.password_confirmation
+                );
                 setEmail("");
                 setPassword("");
                 setPasswordConfirmation("");

@@ -1,8 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, VFC } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
+import {
+    resetPasswordConfirmationErrorState,
+    resetPasswordEmailErrorState,
+    resetPasswordErrorState,
+} from "@/components/store/resetPasswordErrorState";
 import {
     resetPasswordConfirmationState,
     resetPasswordEmailState,
@@ -14,6 +19,12 @@ export const ResetPasswordForm: VFC = () => {
     const [password, setPassword] = useRecoilState(resetPasswordState);
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         resetPasswordConfirmationState
+    );
+
+    const errorEmail = useRecoilValue(resetPasswordEmailErrorState);
+    const errorPassword = useRecoilValue(resetPasswordErrorState);
+    const errorPasswordConfirmation = useRecoilValue(
+        resetPasswordConfirmationErrorState
     );
 
     // メールアドレスを取得する関数
@@ -47,6 +58,7 @@ export const ResetPasswordForm: VFC = () => {
                 value={email}
                 type="mail"
                 onChange={onChangeEmail}
+                error={errorEmail}
             >
                 メールアドレス
             </FormInput>
@@ -56,6 +68,7 @@ export const ResetPasswordForm: VFC = () => {
                 value={password}
                 type="password"
                 onChange={onChangePassword}
+                error={errorPassword}
             >
                 新しいパスワード
             </FormInput>
@@ -65,6 +78,7 @@ export const ResetPasswordForm: VFC = () => {
                 value={passwordConfirmation}
                 type="password"
                 onChange={onChangePasswordConfirmation}
+                error={errorPasswordConfirmation}
             >
                 パスワード(確認用)
             </FormInput>
