@@ -52,12 +52,12 @@ export const ResetPasswordForm: VFC = () => {
             </FormInput>
             <FormInput
                 htmlFor="password"
-                placeholder="パスワードを入力"
+                placeholder="新しいパスワードを入力"
                 value={password}
                 type="password"
                 onChange={onChangePassword}
             >
-                パスワード
+                新しいパスワード
             </FormInput>
             <FormInput
                 htmlFor="confirmation"
