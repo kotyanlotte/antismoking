@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
@@ -36,6 +36,8 @@ export const useResetPassword = (): ResetPasswordReturnType => {
 
     const { token } = useParams<Record<string, string | undefined>>();
 
+    const history = useHistory<History>();
+
     const resetPassword = useCallback(async () => {
         await axios
             .post("/reset-password", {
@@ -46,6 +48,7 @@ export const useResetPassword = (): ResetPasswordReturnType => {
             })
             .then((res: ResponseSuccessMessage) => {
                 toast.success(res.data.message);
+                history.push("/login");
             })
             .catch((e: resetPasswordErrorType) => {
                 setErrorEmail(e.response.data.errors.email);
