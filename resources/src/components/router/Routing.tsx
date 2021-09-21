@@ -18,6 +18,7 @@ import { About } from "@/components/pages/About";
 import { ForgotPassword } from "@/components/pages/ForgotPassword";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
+import { NoMatch } from "@/components/pages/NoMatch";
 import { Policy } from "@/components/pages/Policy";
 import { Register } from "@/components/pages/Register";
 import { ResetPassword } from "@/components/pages/ResetPassword";
@@ -49,6 +50,7 @@ export const Routing: VFC = () => {
 
                     {/* ログイン済みでアクセス可能 */}
                     <AuthUser path="/home" component={Home} />
+                    <Route path="*" component={NoMatch} />
                 </Switch>
                 <ToastContainer position="top-center" autoClose={3000} />
             </RecoilRoot>
