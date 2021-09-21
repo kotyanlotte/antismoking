@@ -1,4 +1,4 @@
-export type ResetLinkSuccessMessage = {
+export type ResponseSuccessMessage = {
     data: {
         message: string;
     };

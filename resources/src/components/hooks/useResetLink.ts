@@ -9,7 +9,7 @@ import { isLoadingButton } from "@/components/store/buttonSpinner";
 import { resetLinkEmailErrorState } from "@/components/store/resetLinkEmailErrorState";
 import { resetLinkEmailState } from "@/components/store/resetLinkEmailState";
 import { ResetLinkEmailErrorType } from "@/components/types/resetLinkEmailErrorType";
-import { ResetLinkSuccessMessage } from "@/components/types/resetLinkSuceesMessage";
+import { ResponseSuccessMessage } from "@/components/types/responseSuccessMessage";
 
 type ResetLinkReturnType = {
     resetLink: () => void;
@@ -29,7 +29,7 @@ export const useResetLink = (): ResetLinkReturnType => {
             .post("/forgot-password", {
                 email: email,
             })
-            .then((res: ResetLinkSuccessMessage) => {
+            .then((res: ResponseSuccessMessage) => {
                 toast.success(res.data.message, {
                     autoClose: false,
                 });

@@ -15,6 +15,7 @@ import {
     resetPasswordState,
 } from "@/components/store/resetPasswordState";
 import { resetPasswordErrorType } from "@/components/types/resetPasswordErrorType";
+import { ResponseSuccessMessage } from "@/components/types/responseSuccessMessage";
 
 type ResetPasswordReturnType = {
     resetPassword: () => void;
@@ -43,8 +44,8 @@ export const useResetPassword = (): ResetPasswordReturnType => {
                 password_confirmation: passwordConfirmation,
                 token: token,
             })
-            .then((res: any) => {
-                console.log(res);
+            .then((res: ResponseSuccessMessage) => {
+                toast.success(res.data.message);
             })
             .catch((e: resetPasswordErrorType) => {
                 setErrorEmail(e.response.data.errors.email);
@@ -55,7 +56,7 @@ export const useResetPassword = (): ResetPasswordReturnType => {
                 setEmail("");
                 setPassword("");
                 setPasswordConfirmation("");
-                toast.error("パスワードの再生成に失敗しました");
+                toast.error("パスワードのリセットに失敗しました");
             });
     }, [email, password, passwordConfirmation, token]);
 
