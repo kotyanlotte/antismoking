@@ -8,21 +8,19 @@ import { isLoggedInState } from "@/components/store/loginUserState";
 
 type PrimaryButtonProps = {
     children: React.ReactNode;
-    style: string;
+    style?: string;
+    loginStyle?: string;
     onClick?: () => void;
     loading?: boolean;
 };
 
 export const PrimaryButton: VFC<PrimaryButtonProps> = memo(
-    ({ children, style, onClick, loading }) => {
+    ({ children, style, loginStyle, onClick, loading }) => {
         const isLoggedIn = useRecoilValue(isLoggedInState);
 
         return (
             <button
-                className={cc([
-                    `btn ${style}`,
-                    { "w-52 surface:w-auto": isLoggedIn },
-                ])}
+                className={cc([`btn ${style}`, isLoggedIn && loginStyle])}
                 onClick={onClick}
                 type="button"
             >

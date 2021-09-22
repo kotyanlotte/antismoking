@@ -17,6 +17,9 @@
     .btn {
         @apply border rounded py-2 px-4 shadow-md font-bold duration-300 md:py-2 md:px-10;
     }
+    .login-btn {
+        @apply w-52 surface:w-auto;
+    }
     .btn-bg-green {
         @apply bg-green-default border-green-default text-white-default hover:bg-green-dark hover:border-green-dark;
     }
