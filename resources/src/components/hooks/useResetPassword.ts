@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { isLoadingButton } from "@/components/store/buttonSpinner";
 import {
     resetPasswordConfirmationErrorState,
     resetPasswordEmailErrorState,
@@ -19,6 +20,7 @@ import { ResponseSuccessMessage } from "@/components/types/responseSuccessMessag
 
 type ResetPasswordReturnType = {
     resetPassword: () => void;
+    loading: boolean;
 };
 
 export const useResetPassword = (): ResetPasswordReturnType => {
@@ -34,11 +36,14 @@ export const useResetPassword = (): ResetPasswordReturnType => {
         resetPasswordConfirmationErrorState
     );
 
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
+
     const { token } = useParams<Record<string, string | undefined>>();
 
     const history = useHistory<History>();
 
     const resetPassword = useCallback(async () => {
+        setLoading(true);
         await axios
             .post("/reset-password", {
                 email: email,
@@ -48,6 +53,7 @@ export const useResetPassword = (): ResetPasswordReturnType => {
             })
             .then((res: ResponseSuccessMessage) => {
                 toast.success(res.data.message);
+                setLoading(false);
                 history.push("/login");
             })
             .catch((e: resetPasswordErrorType) => {
@@ -59,11 +65,13 @@ export const useResetPassword = (): ResetPasswordReturnType => {
                 setEmail("");
                 setPassword("");
                 setPasswordConfirmation("");
+                setLoading(false);
                 toast.error("パスワードのリセットに失敗しました");
             });
     }, [email, password, passwordConfirmation, token]);
 
     return {
         resetPassword,
+        loading,
     };
 };

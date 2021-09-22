@@ -5,7 +5,7 @@ import { useResetPassword } from "@/components/hooks/useResetPassword";
 import { ResetPasswordForm } from "@/components/organisms/forms/ResetPasswordForm";
 
 export const ResetPasswordArea: VFC = () => {
-    const { resetPassword } = useResetPassword();
+    const { resetPassword, loading } = useResetPassword();
 
     return (
         <div className="bg-gray-light py-12 flex justify-center">
@@ -17,6 +17,7 @@ export const ResetPasswordArea: VFC = () => {
                 <PrimaryButton
                     style="text-green-default w-52 md:w-72 border-green-default hover:bg-green-default hover:text-white-default"
                     onClick={resetPassword}
+                    loading={loading}
                 >
                     パスワードの更新
                 </PrimaryButton>
