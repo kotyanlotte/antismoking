@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useCallback } from "react";
 import { useHistory, useParams } from "react-router-dom";
@@ -68,7 +69,7 @@ export const useResetPassword = (): ResetPasswordReturnType => {
                 setLoading(false);
                 toast.error("パスワードのリセットに失敗しました");
             });
-    }, [email, password, passwordConfirmation, token]);
+    }, [email, password, passwordConfirmation, token, history]);
 
     return {
         resetPassword,
