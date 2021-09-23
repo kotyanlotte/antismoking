@@ -14,7 +14,7 @@ export const Header: VFC = () => {
             className={cc([
                 "w-11/12 mx-auto flex flex-col items-center pt-2 ",
                 {
-                    "h-56 surface:h-28 lg:flex-row lg:pt-0 lg:justify-between":
+                    "h-56 surface:h-28 md:h-32 lg:h-28 lg:flex-row lg:pt-0 lg:justify-between":
                         isLoggedIn,
                     "h-28 surface:h-24 surface:flex-row surface:pt-0 surface:justify-between":
                         !isLoggedIn,
