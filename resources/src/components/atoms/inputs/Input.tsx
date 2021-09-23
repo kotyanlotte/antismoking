@@ -2,13 +2,14 @@ import React, { memo, VFC } from "react";
 
 type InputProps = {
     placeholder: string;
+    id: string;
     type?: string;
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const Input: VFC<InputProps> = memo(
-    ({ placeholder, type, value, onChange }) => {
+    ({ placeholder, type, value, onChange, id }) => {
         return (
             <input
                 type={type}
@@ -16,6 +17,7 @@ export const Input: VFC<InputProps> = memo(
                 placeholder={placeholder}
                 value={value}
                 onChange={(e) => onChange?.(e)}
+                id={id}
             />
         );
     }

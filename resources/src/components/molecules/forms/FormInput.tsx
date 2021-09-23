@@ -35,6 +35,7 @@ export const FormInput: VFC<FormInputProps> = memo(
                     type={type}
                     value={value}
                     onChange={onChange}
+                    id={htmlFor}
                 />
                 {error && error.length > 0 && (
                     <ul className="bg-red-light text-red-dark p-4 mt-2 rounded-md">
