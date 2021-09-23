@@ -25,6 +25,9 @@ export const LogoutModal: VFC<LogoutModalType> = ({ loginStyle }) => {
         },
     };
 
+    // Warning: react-modal: App element is not defined.の解決
+    Modal.setAppElement("#app");
+
     // modalを閉じる関数
     const closeModal = useCallback(() => {
         setModalIsOpen(false);
