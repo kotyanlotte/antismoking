@@ -41,7 +41,7 @@ export const useRegister = (): RegisterReturnType => {
     const setErrorPasswordConfirmation = useSetRecoilState(
         errorPasswordConfirmationState
     );
-    const setIsLoggedIn = useSetRecoilState(isLoggedInState);
+    const setLoggedIn = useSetRecoilState(isLoggedInState);
 
     const history = useHistory<History>();
 
@@ -57,7 +57,7 @@ export const useRegister = (): RegisterReturnType => {
             .then(() => {
                 toast.success("アカウントの登録に成功しました");
                 setLoading(false);
-                setIsLoggedIn(true);
+                setLoggedIn(true);
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {

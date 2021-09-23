@@ -29,7 +29,7 @@ export const useLogin = (): LoginReturnType => {
 
     const setErrorEmail = useSetRecoilState(errorEmailLoginState);
     const setErrorPassword = useSetRecoilState(errorPasswordLoginState);
-    const setIsLoggedIn = useSetRecoilState(isLoggedInState);
+    const setLoggedIn = useSetRecoilState(isLoggedInState);
 
     const history = useHistory<History>();
 
@@ -44,7 +44,7 @@ export const useLogin = (): LoginReturnType => {
                 .then(() => {
                     toast.success("ログインに成功しました");
                     setLoading(false);
-                    setIsLoggedIn(true);
+                    setLoggedIn(true);
                     history.push("/home");
                 })
                 .catch((e: LoginErrorType) => {
