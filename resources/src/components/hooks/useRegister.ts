@@ -56,6 +56,14 @@ export const useRegister = (): RegisterReturnType => {
             })
             .then(() => {
                 toast.success("アカウントの登録に成功しました");
+                setName("");
+                setEmail("");
+                setPassword("");
+                setPasswordConfirmation("");
+                setErrorName([]);
+                setErrorEmail([]);
+                setErrorPassword([]);
+                setErrorPasswordConfirmation([]);
                 setLoading(false);
                 setLoggedIn(true);
                 history.push("/home");

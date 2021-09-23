@@ -35,6 +35,7 @@ export const useResetLink = (): ResetLinkReturnType => {
                 });
                 setLoading(false);
                 setEmail("");
+                setErrorEmail([]);
             })
             .catch((e: ResetLinkEmailErrorType) => {
                 setLoading(false);

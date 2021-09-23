@@ -43,8 +43,12 @@ export const useLogin = (): LoginReturnType => {
                 })
                 .then(() => {
                     toast.success("ログインに成功しました");
+                    setEmail("");
+                    setPassword("");
                     setLoading(false);
                     setLoggedIn(true);
+                    setErrorEmail([]);
+                    setErrorPassword([]);
                     history.push("/home");
                 })
                 .catch((e: LoginErrorType) => {

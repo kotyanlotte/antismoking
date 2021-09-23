@@ -54,6 +54,12 @@ export const useResetPassword = (): ResetPasswordReturnType => {
             })
             .then((res: ResponseSuccessMessage) => {
                 toast.success(res.data.message);
+                setErrorEmail([]);
+                setErrorPassword([]);
+                setErrorPasswordConfirmation([]);
+                setEmail("");
+                setPassword("");
+                setPasswordConfirmation("");
                 setLoading(false);
                 history.push("/login");
             })
