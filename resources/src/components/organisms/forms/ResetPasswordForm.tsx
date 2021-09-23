@@ -54,9 +54,9 @@ export const ResetPasswordForm: VFC = () => {
         <form className="space-y-9">
             <FormInput
                 htmlFor="mail"
-                placeholder="メールアドレスを入力"
+                placeholder="新しいメールアドレスを入力"
                 value={email}
-                type="mail"
+                type="email"
                 onChange={onChangeEmail}
                 error={errorEmail}
             >
@@ -70,7 +70,7 @@ export const ResetPasswordForm: VFC = () => {
                 onChange={onChangePassword}
                 error={errorPassword}
             >
-                新しいパスワード
+                パスワード
             </FormInput>
             <FormInput
                 htmlFor="confirmation"

@@ -39,7 +39,7 @@ export const LoginForm: VFC = () => {
             <FormInput
                 htmlFor="mail"
                 placeholder="メールアドレスを入力"
-                type="mail"
+                type="email"
                 value={email}
                 onChange={onChangeEmail}
                 error={errorEmail}
