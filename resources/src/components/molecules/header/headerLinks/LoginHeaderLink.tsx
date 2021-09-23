@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 
 import { HeaderLink } from "@/components/molecules/header/HeaderLink";
-import { LogoutModal } from "@/components/organisms/Modal";
+import { LogoutModal } from "@/components/organisms/LogoutModal";
 
 export const LoginHeaderLink: VFC = () => {
     return (
