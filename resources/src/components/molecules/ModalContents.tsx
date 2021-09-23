@@ -8,7 +8,7 @@ type ModalContentsType = {
 };
 
 export const ModalContents: VFC<ModalContentsType> = ({ closeModal }) => {
-    const { logout } = useLogout();
+    const { logout, loading } = useLogout();
 
     return (
         <div className="space-y-12 flex flex-col justify-center items-center">
@@ -19,6 +19,7 @@ export const ModalContents: VFC<ModalContentsType> = ({ closeModal }) => {
                 <PrimaryButton
                     style="w-44 border-green-default hover:bg-green-default hover:text-white-default"
                     onClick={logout}
+                    loading={loading}
                 >
                     はい
                 </PrimaryButton>
