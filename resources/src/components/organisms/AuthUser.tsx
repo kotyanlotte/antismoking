@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { isLoggedInState } from "@/components/store/loginUserState";
 
 type AuthUserType = {
-    path: "/home";
+    path: "/home" | "/edit";
     component: React.VFC;
 };
 

@@ -15,6 +15,7 @@ import { RecoilRoot } from "recoil";
 import { AuthUser } from "@/components/organisms/AuthUser";
 import { NotLoggedInUser } from "@/components/organisms/NotLoggedInUser";
 import { About } from "@/components/pages/About";
+import { Edit } from "@/components/pages/Edit";
 import { ForgotPassword } from "@/components/pages/ForgotPassword";
 import { Home } from "@/components/pages/Home";
 import { Login } from "@/components/pages/Login";
@@ -50,6 +51,8 @@ export const Routing: VFC = () => {
 
                     {/* ログイン済みでアクセス可能 */}
                     <AuthUser path="/home" component={Home} />
+                    <AuthUser path="/edit" component={Edit} />
+
                     <Route path="*" component={NoMatch} />
                 </Switch>
                 <ToastContainer position="top-center" autoClose={3000} />
