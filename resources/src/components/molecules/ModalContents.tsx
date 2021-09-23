@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { memo, VFC } from "react";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useLogout } from "@/components/hooks/useLogout";
@@ -7,7 +7,7 @@ type ModalContentsType = {
     closeModal: () => void;
 };
 
-export const ModalContents: VFC<ModalContentsType> = ({ closeModal }) => {
+export const ModalContents: VFC<ModalContentsType> = memo(({ closeModal }) => {
     const { logout, loading } = useLogout();
 
     return (
@@ -32,4 +32,6 @@ export const ModalContents: VFC<ModalContentsType> = ({ closeModal }) => {
             </div>
         </div>
     );
-};
+});
+
+ModalContents.displayName = "ModalContents";

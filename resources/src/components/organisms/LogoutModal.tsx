@@ -1,4 +1,4 @@
-import React, { useCallback, useState, VFC } from "react";
+import React, { memo, useCallback, useState, VFC } from "react";
 import Modal from "react-modal";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
@@ -8,7 +8,7 @@ type LogoutModalType = {
     loginStyle: string;
 };
 
-export const LogoutModal: VFC<LogoutModalType> = ({ loginStyle }) => {
+export const LogoutModal: VFC<LogoutModalType> = memo(({ loginStyle }) => {
     const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
     // modalのstyle
@@ -58,4 +58,6 @@ export const LogoutModal: VFC<LogoutModalType> = ({ loginStyle }) => {
             </Modal>
         </>
     );
-};
+});
+
+LogoutModal.displayName = "LogoutModal";

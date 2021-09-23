@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { memo, VFC } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
@@ -9,15 +9,16 @@ type NotLoggedInUserProps = {
     component: React.VFC;
 };
 
-export const NotLoggedInUser: VFC<NotLoggedInUserProps> = ({
-    path,
-    component,
-}) => {
-    const isLoggedIn = useRecoilValue(isLoggedInState);
+export const NotLoggedInUser: VFC<NotLoggedInUserProps> = memo(
+    ({ path, component }) => {
+        const isLoggedIn = useRecoilValue(isLoggedInState);
 
-    return isLoggedIn ? (
-        <Redirect to="/home" />
-    ) : (
-        <Route path={path} component={component} />
-    );
-};
+        return isLoggedIn ? (
+            <Redirect to="/home" />
+        ) : (
+            <Route path={path} component={component} />
+        );
+    }
+);
+
+NotLoggedInUser.displayName = "NotLoggedInUser";
