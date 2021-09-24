@@ -17,17 +17,17 @@ export const ModalContents: VFC<ModalContentsType> = memo(({ closeModal }) => {
             </h2>
             <div className="space-y-5 flex flex-col">
                 <PrimaryButton
-                    style="w-44 border-green-default hover:bg-green-default hover:text-white-default"
+                    style="w-44 border-green-default md:px-4 hover:bg-green-default hover:text-white-default"
                     onClick={logout}
                     loading={loading}
                 >
-                    はい
+                    ログアウトする
                 </PrimaryButton>
                 <PrimaryButton
-                    style="w-44 border-red-default hover:bg-red-default hover:text-white-default"
+                    style="w-44 border-red-default md:px-4 hover:bg-red-default hover:text-white-default"
                     onClick={closeModal}
                 >
-                    いいえ
+                    キャンセル
                 </PrimaryButton>
             </div>
         </div>
