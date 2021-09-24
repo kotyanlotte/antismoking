@@ -1,8 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, VFC } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
+import {
+    updateEmailErrorState,
+    updateNameErrorState,
+} from "@/components/store/userUpdateErrorState";
 import {
     updateEmailState,
     updateNameState,
@@ -11,7 +15,9 @@ import {
 export const UpdateForm: VFC = () => {
     const [name, setName] = useRecoilState(updateNameState);
     const [email, setEmail] = useRecoilState(updateEmailState);
-    console.log(name, email);
+
+    const errorName = useRecoilValue(updateNameErrorState);
+    const errorEmail = useRecoilValue(updateEmailErrorState);
 
     // 名前を取得する関数
     const onChangeName = useCallback(
@@ -37,6 +43,7 @@ export const UpdateForm: VFC = () => {
                 type="text"
                 value={name}
                 onChange={onChangeName}
+                error={errorName}
             >
                 ニックネーム
             </FormInput>
@@ -46,6 +53,7 @@ export const UpdateForm: VFC = () => {
                 type="email"
                 value={email}
                 onChange={onChangeEmail}
+                error={errorEmail}
             >
                 メールアドレス
             </FormInput>
