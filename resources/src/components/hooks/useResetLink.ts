@@ -18,7 +18,9 @@ type ResetLinkReturnType = {
 
 export const useResetLink = (): ResetLinkReturnType => {
     const [email, setEmail] = useRecoilState(resetLinkEmailState);
+
     const setErrorEmail = useSetRecoilState(resetLinkEmailErrorState);
+
     const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const history = useHistory<History>();
@@ -30,17 +32,17 @@ export const useResetLink = (): ResetLinkReturnType => {
                 email: email,
             })
             .then((res: ResponseSuccessMessage) => {
+                setEmail("");
+                setErrorEmail([]);
+                setLoading(false);
                 toast.success(res.data.message, {
                     autoClose: false,
                 });
-                setLoading(false);
-                setEmail("");
-                setErrorEmail([]);
             })
             .catch((e: ResetLinkEmailErrorType) => {
-                setLoading(false);
                 setEmail("");
                 setErrorEmail(e.response.data.errors.email);
+                setLoading(false);
                 toast.error(
                     "パスワードリセットリンクを発行することが出来ませんでした。"
                 );

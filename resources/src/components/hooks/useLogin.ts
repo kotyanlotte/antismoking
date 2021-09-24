@@ -25,11 +25,13 @@ type LoginReturnType = {
 export const useLogin = (): LoginReturnType => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
-    const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const setErrorEmail = useSetRecoilState(errorEmailLoginState);
     const setErrorPassword = useSetRecoilState(errorPasswordLoginState);
+
     const setLoggedIn = useSetRecoilState(isLoggedInState);
+
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const history = useHistory<History>();
 
@@ -42,13 +44,13 @@ export const useLogin = (): LoginReturnType => {
                     password: password,
                 })
                 .then(() => {
-                    toast.success("ログインに成功しました");
                     setEmail("");
                     setPassword("");
-                    setLoading(false);
-                    setLoggedIn(true);
                     setErrorEmail([]);
                     setErrorPassword([]);
+                    setLoggedIn(true);
+                    setLoading(false);
+                    toast.success("ログインに成功しました");
                     history.push("/home");
                 })
                 .catch((e: LoginErrorType) => {

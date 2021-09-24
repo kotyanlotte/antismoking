@@ -53,25 +53,25 @@ export const useResetPassword = (): ResetPasswordReturnType => {
                 token: token,
             })
             .then((res: ResponseSuccessMessage) => {
-                toast.success(res.data.message);
-                setErrorEmail([]);
-                setErrorPassword([]);
-                setErrorPasswordConfirmation([]);
                 setEmail("");
                 setPassword("");
                 setPasswordConfirmation("");
+                setErrorEmail([]);
+                setErrorPassword([]);
+                setErrorPasswordConfirmation([]);
                 setLoading(false);
+                toast.success(res.data.message);
                 history.push("/login");
             })
             .catch((e: resetPasswordErrorType) => {
+                setEmail("");
+                setPassword("");
+                setPasswordConfirmation("");
                 setErrorEmail(e.response.data.errors.email);
                 setErrorPassword(e.response.data.errors.password);
                 setErrorPasswordConfirmation(
                     e.response.data.errors.password_confirmation
                 );
-                setEmail("");
-                setPassword("");
-                setPasswordConfirmation("");
                 setLoading(false);
                 toast.error("パスワードのリセットに失敗しました");
             });

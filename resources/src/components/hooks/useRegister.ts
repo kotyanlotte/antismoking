@@ -29,11 +29,11 @@ type RegisterReturnType = {
 export const useRegister = (): RegisterReturnType => {
     const [name, setName] = useRecoilState(nameState);
     const [email, setEmail] = useRecoilState(emailRegisterState);
+
     const [password, setPassword] = useRecoilState(passwordRegisterState);
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
-    const [loading, setLoading] = useRecoilState(isLoadingButton);
 
     const setErrorName = useSetRecoilState(errorNameState);
     const setErrorEmail = useSetRecoilState(errorEmailRegisterState);
@@ -41,6 +41,9 @@ export const useRegister = (): RegisterReturnType => {
     const setErrorPasswordConfirmation = useSetRecoilState(
         errorPasswordConfirmationState
     );
+
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
+
     const setLoggedIn = useSetRecoilState(isLoggedInState);
 
     const history = useHistory<History>();
@@ -55,7 +58,6 @@ export const useRegister = (): RegisterReturnType => {
                 password_confirmation: passwordConfirmation,
             })
             .then(() => {
-                toast.success("アカウントの登録に成功しました");
                 setName("");
                 setEmail("");
                 setPassword("");
@@ -64,8 +66,9 @@ export const useRegister = (): RegisterReturnType => {
                 setErrorEmail([]);
                 setErrorPassword([]);
                 setErrorPasswordConfirmation([]);
-                setLoading(false);
                 setLoggedIn(true);
+                setLoading(false);
+                toast.success("アカウントの登録に成功しました");
                 history.push("/home");
             })
             .catch((e: RegisterErrorType) => {

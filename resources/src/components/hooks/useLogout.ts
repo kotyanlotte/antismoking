@@ -25,14 +25,14 @@ export const useLogout = (): LogoutReturnType => {
         await axios
             .post("/logout")
             .then(() => {
-                toast.success("ログアウトに成功しました");
                 setLoggedIn(false);
-                history.push("/login");
                 setLoading(false);
+                toast.success("ログアウトに成功しました");
+                history.push("/login");
             })
             .catch(() => {
-                toast.error("ログアウトに失敗です。");
                 setLoading(false);
+                toast.error("ログアウトに失敗です。");
             });
     }, [history]);
 

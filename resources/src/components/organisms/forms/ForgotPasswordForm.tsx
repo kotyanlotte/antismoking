@@ -8,6 +8,7 @@ import { resetLinkEmailState } from "@/components/store/resetLinkEmailState";
 
 export const ForgotPasswordForm: VFC = () => {
     const [email, setEmail] = useRecoilState(resetLinkEmailState);
+
     const errorEmail = useRecoilValue(resetLinkEmailErrorState);
 
     // パスワードリセットリンク発行のためのメールアドレスを取得する関数

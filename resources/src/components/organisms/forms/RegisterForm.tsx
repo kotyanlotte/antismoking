@@ -23,6 +23,7 @@ export const RegisterForm: VFC = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useRecoilState(
         passwordConfirmationState
     );
+
     const errorName = useRecoilValue(errorNameState);
     const errorEmail = useRecoilValue(errorEmailRegisterState);
     const errorPassword = useRecoilValue(errorPasswordRegisterState);

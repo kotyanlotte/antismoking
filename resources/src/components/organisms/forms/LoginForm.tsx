@@ -15,6 +15,7 @@ import {
 export const LoginForm: VFC = () => {
     const [email, setEmail] = useRecoilState(emailLoginState);
     const [password, setPassword] = useRecoilState(passwordLoginState);
+
     const errorEmail = useRecoilValue(errorEmailLoginState);
     const errorPassword = useRecoilValue(errorPasswordLoginState);
 
