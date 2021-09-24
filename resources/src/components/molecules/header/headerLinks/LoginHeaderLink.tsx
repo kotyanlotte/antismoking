@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 
 import { HeaderLink } from "@/components/molecules/header/HeaderLink";
-import { LogoutModal } from "@/components/organisms/LogoutModal";
+import { LogoutAndDeleteModal } from "@/components/organisms/LogoutAndDeleteModal";
 
 export const LoginHeaderLink: VFC = () => {
     return (
@@ -12,13 +12,23 @@ export const LoginHeaderLink: VFC = () => {
                 loginStyle="login-btn"
                 text="編集"
             />
-            <HeaderLink
-                to="/delete"
-                style="btn-bg-green"
+            <LogoutAndDeleteModal
                 loginStyle="login-btn"
-                text="削除"
+                text="退会"
+                label="Delete Modal"
+                title="退会をするとユーザー情報の全てが削除されます。"
+                confirm="それでもよろしいですか？"
+                yes="退会する"
+                height="70%"
             />
-            <LogoutModal loginStyle="login-btn" />
+            <LogoutAndDeleteModal
+                loginStyle="login-btn"
+                text="ログアウト"
+                label="Logout Modal"
+                title="ログアウトしますか？"
+                yes="ログアウトする"
+                height="50%"
+            />
         </>
     );
 };
