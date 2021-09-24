@@ -21,7 +21,7 @@ export const Header: VFC = () => {
                 },
             ])}
         >
-            <Link to="about">
+            <Link to={isLoggedIn ? "/home" : "/about"}>
                 <span className="text-4xl md:text-5xl">Anti</span>
                 <span className="text-4xl text-green-default md:text-5xl">
                     Smoking
