@@ -9,6 +9,6 @@ class UsersController extends Controller
 {
     public function destroy(){
         $user = Auth::user();
-        dd($user);
+        $user->delete();
     }
 }

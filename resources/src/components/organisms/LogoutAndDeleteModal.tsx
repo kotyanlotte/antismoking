@@ -12,10 +12,11 @@ type LogoutAndDeleteModalType = {
     confirm?: string;
     yes: string;
     height: string;
+    onClick: () => void;
 };
 
 export const LogoutAndDeleteModal: VFC<LogoutAndDeleteModalType> = memo(
-    ({ loginStyle, text, label, title, confirm, yes, height }) => {
+    ({ loginStyle, text, label, title, confirm, yes, height, onClick }) => {
         const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
         // modalのstyle
@@ -66,6 +67,7 @@ export const LogoutAndDeleteModal: VFC<LogoutAndDeleteModalType> = memo(
                         title={title}
                         confirm={confirm}
                         yes={yes}
+                        onClick={onClick}
                     />
                 </Modal>
             </>

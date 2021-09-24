@@ -1,9 +1,14 @@
 import React, { VFC } from "react";
 
+import { useDestroy } from "@/components/hooks/useDestroy";
+import { useLogout } from "@/components/hooks/useLogout";
 import { HeaderLink } from "@/components/molecules/header/HeaderLink";
 import { LogoutAndDeleteModal } from "@/components/organisms/LogoutAndDeleteModal";
 
 export const LoginHeaderLink: VFC = () => {
+    const { destroy } = useDestroy();
+    const { logout } = useLogout();
+
     return (
         <>
             <HeaderLink
@@ -20,6 +25,7 @@ export const LoginHeaderLink: VFC = () => {
                 confirm="それでもよろしいですか？"
                 yes="退会する"
                 height="70%"
+                onClick={destroy}
             />
             <LogoutAndDeleteModal
                 loginStyle="login-btn"
@@ -28,6 +34,7 @@ export const LoginHeaderLink: VFC = () => {
                 title="ログアウトしますか？"
                 yes="ログアウトする"
                 height="50%"
+                onClick={logout}
             />
         </>
     );

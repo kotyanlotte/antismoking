@@ -8,11 +8,12 @@ type ModalContentsType = {
     title: string;
     confirm?: string;
     yes: string;
+    onClick: () => void;
 };
 
 export const ModalContents: VFC<ModalContentsType> = memo(
-    ({ closeModal, title, confirm, yes }) => {
-        const { logout, loading } = useLogout();
+    ({ closeModal, title, confirm, yes, onClick }) => {
+        const { loading } = useLogout();
 
         return (
             <div className="space-y-8 flex flex-col justify-center items-center surface:space-y-12">
@@ -27,7 +28,7 @@ export const ModalContents: VFC<ModalContentsType> = memo(
                 <div className="space-y-5 flex flex-col">
                     <PrimaryButton
                         style="w-44 border-green-default md:px-4 hover:bg-green-default hover:text-white-default"
-                        onClick={logout}
+                        onClick={onClick}
                         loading={loading}
                     >
                         {yes}
