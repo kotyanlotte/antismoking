@@ -21,6 +21,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string("password_confirmation");
             $table->rememberToken();
+
+            $table->unsignedInteger('total_cigarettes')->default(0);
+            $table->integer('brain_value')->default(100);
+            $table->integer('mental_value')->default(100);
+            $table->integer('health_value')->default(100);
             $table->timestamps();
         });
     }
