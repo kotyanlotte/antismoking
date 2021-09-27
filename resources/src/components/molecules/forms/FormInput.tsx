@@ -11,10 +11,11 @@ type FormInputProps = {
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     error?: string[];
+    min?: string;
 };
 
 export const FormInput: VFC<FormInputProps> = memo(
-    ({ htmlFor, placeholder, type, children, value, onChange, error }) => {
+    ({ htmlFor, placeholder, type, children, value, onChange, error, min }) => {
         const location = useLocation<Location>();
 
         return (
@@ -36,6 +37,7 @@ export const FormInput: VFC<FormInputProps> = memo(
                     value={value}
                     onChange={onChange}
                     id={htmlFor}
+                    min={min}
                 />
                 {error && error.length > 0 && (
                     <ul className="bg-red-light text-red-dark p-4 mt-2 rounded-md">
