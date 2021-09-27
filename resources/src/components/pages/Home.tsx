@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 
+import { CigarettesArea } from "@/components/organisms/CigarettesArea";
 import { Footer } from "@/components/organisms/Footer";
-import { CigarettesArea } from "@/components/organisms/forms/CigarettesArea";
 import { Header } from "@/components/organisms/Header";
 
 export const Home: VFC = () => {
