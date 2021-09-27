@@ -6,12 +6,12 @@ type InputProps = {
     type?: string;
     value?: string | number;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    min?: string;
     style?: string;
+    onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const Input: VFC<InputProps> = memo(
-    ({ placeholder, type, value, onChange, id, min, style }) => {
+    ({ placeholder, type, value, onChange, id, style, onInput }) => {
         return (
             <input
                 type={type}
@@ -20,7 +20,7 @@ export const Input: VFC<InputProps> = memo(
                 value={value}
                 onChange={(e) => onChange?.(e)}
                 id={id}
-                min={min}
+                onInput={onInput}
             />
         );
     }

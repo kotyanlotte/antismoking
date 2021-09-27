@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const cigarettesState = atom<number>({
+export const cigarettesState = atom<string>({
     key: "cigarettesState",
-    default: 0,
+    default: "",
 });
