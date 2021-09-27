@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useLogin } from "@/components/hooks/useLogin";
-import { LoginForm } from "@/components/organisms/forms/LoginForm";
+import { LoginForm } from "@/components/molecules/forms/LoginForm";
 
 export const LoginArea: VFC = () => {
     const { login, loading } = useLogin();

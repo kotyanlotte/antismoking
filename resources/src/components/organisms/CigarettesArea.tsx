@@ -1,6 +1,6 @@
 import React, { VFC } from "react";
 
-import { CigarettesForm } from "@/components/organisms/forms/CigarettesForm";
+import { CigarettesForm } from "@/components/molecules/forms/CigarettesForm";
 
 export const CigarettesArea: VFC = () => {
     return (

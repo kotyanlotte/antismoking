@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useResetLink } from "@/components/hooks/useResetLink";
-import { ForgotPasswordForm } from "@/components/organisms/forms/ForgotPasswordForm";
+import { ForgotPasswordForm } from "@/components/molecules/forms/ForgotPasswordForm";
 
 export const ForgotPasswordArea: VFC = () => {
     const { resetLink, loading } = useResetLink();

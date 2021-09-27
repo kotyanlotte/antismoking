@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useUpdate } from "@/components/hooks/useUpdate";
-import { UpdateForm } from "@/components/organisms/forms/UpdateForm";
+import { UpdateForm } from "@/components/molecules/forms/UpdateForm";
 
 export const UpdateArea: VFC = () => {
     const { update, loading } = useUpdate();

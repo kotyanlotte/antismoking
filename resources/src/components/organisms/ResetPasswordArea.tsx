@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useResetPassword } from "@/components/hooks/useResetPassword";
-import { ResetPasswordForm } from "@/components/organisms/forms/ResetPasswordForm";
+import { ResetPasswordForm } from "@/components/molecules/forms/ResetPasswordForm";
 
 export const ResetPasswordArea: VFC = () => {
     const { resetPassword, loading } = useResetPassword();

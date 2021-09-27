@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 import { useRegister } from "@/components/hooks/useRegister";
-import { RegisterForm } from "@/components/organisms/forms/RegisterForm";
+import { RegisterForm } from "@/components/molecules/forms/RegisterForm";
 
 export const RegisterArea: VFC = () => {
     const { register, loading } = useRegister();
