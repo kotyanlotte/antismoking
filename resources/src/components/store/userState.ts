@@ -1,6 +1,8 @@
 import { atom } from "recoil";
 
-export const userState = atom<null>({
+import { User } from "@/components/types/userType";
+
+export const userState = atom<null | User>({
     key: "userState",
     default: null,
 });

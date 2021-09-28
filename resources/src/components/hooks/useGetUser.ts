@@ -1,19 +1,26 @@
 import axios from "axios";
 import { useCallback } from "react";
+import { toast } from "react-toastify";
+import { useSetRecoilState } from "recoil";
+
+import { userState } from "@/components/store/userState";
+import { User } from "@/components/types/userType";
 
 type GetUserReturnType = {
     getUser: () => void;
 };
 
 export const useGetUser = (): GetUserReturnType => {
+    const setUser = useSetRecoilState(userState);
+
     const getUser = useCallback(async () => {
         await axios
-            .get("api/user")
-            .then((res: any) => {
-                console.log(res);
+            .get<User>("api/user")
+            .then((res) => {
+                setUser(res.data);
             })
             .catch(() => {
-                console.log("ユーザーが取得できませんでした。");
+                toast.error("ユーザーが見つかりませんでした");
             });
     }, []);
 
