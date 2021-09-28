@@ -4,7 +4,7 @@ import cc from "classcat";
 import React, { memo, VFC } from "react";
 import { useRecoilValue } from "recoil";
 
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 type PrimaryButtonProps = {
     children: React.ReactNode;

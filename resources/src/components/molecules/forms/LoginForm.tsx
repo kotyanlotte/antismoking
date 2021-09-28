@@ -6,11 +6,11 @@ import { FormInput } from "@/components/molecules/forms/FormInput";
 import {
     errorEmailLoginState,
     errorPasswordLoginState,
-} from "@/components/store/loginErrorState";
+} from "@/components/store/login/loginErrorState";
 import {
     emailLoginState,
     passwordLoginState,
-} from "@/components/store/loginValueState";
+} from "@/components/store/login/loginValueState";
 
 export const LoginForm: VFC = () => {
     const [email, setEmail] = useRecoilState(emailLoginState);

@@ -4,7 +4,7 @@ import { useRecoilValue } from "recoil";
 
 import { LoginHeaderLink } from "@/components/molecules/header/headerLinks/LoginHeaderLink";
 import { NoLoginHeaderLink } from "@/components/molecules/header/headerLinks/NoLoginHeaderLink";
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 export const HeaderNav: VFC = () => {
     const isLoggedIn = useRecoilValue(isLoggedInState);

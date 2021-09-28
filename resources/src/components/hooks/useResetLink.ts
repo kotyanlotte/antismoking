@@ -6,8 +6,8 @@ import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 import { isLoadingButton } from "@/components/store/buttonSpinner";
-import { resetLinkEmailErrorState } from "@/components/store/resetLinkEmailErrorState";
-import { resetLinkEmailState } from "@/components/store/resetLinkEmailState";
+import { resetLinkEmailErrorState } from "@/components/store/reset/resetLinkEmailErrorState";
+import { resetLinkEmailState } from "@/components/store/reset/resetLinkEmailState";
 import { ResetLinkEmailErrorType } from "@/components/types/resetLinkEmailErrorType";
 import { ResponseSuccessMessage } from "@/components/types/responseSuccessMessage";
 

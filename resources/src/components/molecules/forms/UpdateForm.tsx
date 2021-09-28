@@ -6,11 +6,11 @@ import { FormInput } from "@/components/molecules/forms/FormInput";
 import {
     updateEmailErrorState,
     updateNameErrorState,
-} from "@/components/store/userUpdateErrorState";
+} from "@/components/store/update/userUpdateErrorState";
 import {
     updateEmailState,
     updateNameState,
-} from "@/components/store/userUpdateState";
+} from "@/components/store/update/userUpdateState";
 
 export const UpdateForm: VFC = () => {
     const [name, setName] = useRecoilState(updateNameState);

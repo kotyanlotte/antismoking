@@ -8,13 +8,13 @@ import {
     errorNameState,
     errorPasswordConfirmationState,
     errorPasswordRegisterState,
-} from "@/components/store/registerErrorState";
+} from "@/components/store/register/registerErrorState";
 import {
     emailRegisterState,
     nameState,
     passwordConfirmationState,
     passwordRegisterState,
-} from "@/components/store/registerValueState";
+} from "@/components/store/register/registerValueState";
 
 export const RegisterForm: VFC = () => {
     const [name, setName] = useRecoilState(nameState);

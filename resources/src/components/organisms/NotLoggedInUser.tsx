@@ -2,7 +2,7 @@ import React, { memo, VFC } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 type NotLoggedInUserProps = {
     path: "/register" | "/login" | "/forgot-password";

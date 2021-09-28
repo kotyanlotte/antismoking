@@ -10,12 +10,12 @@ import {
     resetPasswordConfirmationErrorState,
     resetPasswordEmailErrorState,
     resetPasswordErrorState,
-} from "@/components/store/resetPasswordErrorState";
+} from "@/components/store/reset/resetPasswordErrorState";
 import {
     resetPasswordConfirmationState,
     resetPasswordEmailState,
     resetPasswordState,
-} from "@/components/store/resetPasswordState";
+} from "@/components/store/reset/resetPasswordState";
 import { resetPasswordErrorType } from "@/components/types/resetPasswordErrorType";
 import { ResponseSuccessMessage } from "@/components/types/responseSuccessMessage";
 

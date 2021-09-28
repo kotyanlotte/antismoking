@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 import { isLoadingButton } from "@/components/store/buttonSpinner";
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 type LogoutReturnType = {
     logout: () => void;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
 import { HeaderNav } from "@/components/molecules/header/HeaderNav";
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 export const Header: VFC = () => {
     const isLoggedIn = useRecoilValue(isLoggedInState);

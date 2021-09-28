@@ -6,19 +6,19 @@ import { toast } from "react-toastify";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 import { isLoadingButton } from "@/components/store/buttonSpinner";
-import { isLoggedInState } from "@/components/store/loginUserState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 import {
     errorEmailRegisterState,
     errorNameState,
     errorPasswordConfirmationState,
     errorPasswordRegisterState,
-} from "@/components/store/registerErrorState";
+} from "@/components/store/register/registerErrorState";
 import {
     emailRegisterState,
     nameState,
     passwordConfirmationState,
     passwordRegisterState,
-} from "@/components/store/registerValueState";
+} from "@/components/store/register/registerValueState";
 import { RegisterErrorType } from "@/components/types/registerErrorType";
 
 type RegisterReturnType = {

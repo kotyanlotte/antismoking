@@ -9,12 +9,12 @@ import { isLoadingButton } from "@/components/store/buttonSpinner";
 import {
     errorEmailLoginState,
     errorPasswordLoginState,
-} from "@/components/store/loginErrorState";
-import { isLoggedInState } from "@/components/store/loginUserState";
+} from "@/components/store/login/loginErrorState";
+import { isLoggedInState } from "@/components/store/login/loginUserState";
 import {
     emailLoginState,
     passwordLoginState,
-} from "@/components/store/loginValueState";
+} from "@/components/store/login/loginValueState";
 import { LoginErrorType } from "@/components/types/loginErrorType";
 
 type LoginReturnType = {

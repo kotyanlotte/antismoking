@@ -7,12 +7,12 @@ import {
     resetPasswordConfirmationErrorState,
     resetPasswordEmailErrorState,
     resetPasswordErrorState,
-} from "@/components/store/resetPasswordErrorState";
+} from "@/components/store/reset/resetPasswordErrorState";
 import {
     resetPasswordConfirmationState,
     resetPasswordEmailState,
     resetPasswordState,
-} from "@/components/store/resetPasswordState";
+} from "@/components/store/reset/resetPasswordState";
 
 export const ResetPasswordForm: VFC = () => {
     const [email, setEmail] = useRecoilState(resetPasswordEmailState);

@@ -3,8 +3,8 @@ import React, { useCallback, VFC } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import { FormInput } from "@/components/molecules/forms/FormInput";
-import { resetLinkEmailErrorState } from "@/components/store/resetLinkEmailErrorState";
-import { resetLinkEmailState } from "@/components/store/resetLinkEmailState";
+import { resetLinkEmailErrorState } from "@/components/store/reset/resetLinkEmailErrorState";
+import { resetLinkEmailState } from "@/components/store/reset/resetLinkEmailState";
 
 export const ForgotPasswordForm: VFC = () => {
     const [email, setEmail] = useRecoilState(resetLinkEmailState);
