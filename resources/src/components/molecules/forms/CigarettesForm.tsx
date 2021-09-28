@@ -8,7 +8,6 @@ import { cigarettesState } from "@/components/store/cigarettesState";
 
 export const CigarettesForm: VFC = () => {
     const [cigarettes, setCigarettes] = useRecoilState(cigarettesState);
-    console.log(cigarettes);
 
     // 吸ったタバコの本数を取得する関数
     const onChangeCigarettes = useCallback(
