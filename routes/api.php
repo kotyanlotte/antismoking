@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->match(["get","put"],'/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:sanctum')->put('/user', [UsersController::class,'update']);
 
 Route::middleware('auth:sanctum')->delete('/delete', [UsersController::class, "destroy"]);
