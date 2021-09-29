@@ -14,20 +14,20 @@ import { useRecoilValue } from "recoil";
 import { userState } from "@/components/store/userState";
 
 export const Parameter: VFC = () => {
-    const value = useRecoilValue(userState);
+    const user = useRecoilValue(userState);
 
     const data = [
         {
             title: "健康値",
-            value: value?.health_value,
+            value: user?.health_value,
         },
         {
             title: "メンタル値",
-            value: value?.mental_value,
+            value: user?.mental_value,
         },
         {
             title: "脳値",
-            value: value?.brain_value,
+            value: user?.brain_value,
         },
     ];
 
@@ -40,7 +40,7 @@ export const Parameter: VFC = () => {
                 <PolarAngleAxis dataKey="title" />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} />
                 <Radar
-                    name={`${value?.name}さん`}
+                    name={`${user?.name}さん`}
                     dataKey="value"
                     stroke="#6EE7B7"
                     fill="#6EE7B7"
