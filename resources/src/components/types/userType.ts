@@ -3,4 +3,5 @@ export type User = {
     mental_value: number;
     health_value: number;
     brain_value: number;
+    total_cigarettes: number;
 };
