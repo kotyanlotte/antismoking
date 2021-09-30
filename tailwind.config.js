@@ -18,6 +18,9 @@ module.exports = {
                 650: "650px",
                 inputWidth: "min(400px,80vw)",
             },
+            height: {
+                400: "400px",
+            },
             padding: {
                 vw10: "10vw",
                 em: "1em",
