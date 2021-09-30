@@ -35,10 +35,10 @@ export const Parameter: VFC = () => {
     const changeColor = useCallback((data: (number | undefined)[]): string => {
         if (data.every((val) => val! > 50)) {
             return "#6EE7B7";
-        } else if (data.some((val) => val! < 50 && val! > 30)) {
-            return "#FFF100";
-        } else {
+        } else if (data.some((val) => val! < 20)) {
             return "#FF000D";
+        } else {
+            return "#FFF100";
         }
     }, []);
 
