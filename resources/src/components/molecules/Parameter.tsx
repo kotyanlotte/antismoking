@@ -8,7 +8,6 @@ import {
     Radar,
     RadarChart,
     ResponsiveContainer,
-    Tooltip,
 } from "recharts";
 import { useRecoilValue } from "recoil";
 
@@ -47,7 +46,6 @@ export const Parameter: VFC = () => {
         <ResponsiveContainer width={"100%"} height={400}>
             <RadarChart outerRadius={"90%"} data={data} margin={{ bottom: 60 }}>
                 <Legend verticalAlign={"top"} height={36} />
-                <Tooltip />
                 <PolarGrid />
                 <PolarAngleAxis dataKey="title" />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} />
