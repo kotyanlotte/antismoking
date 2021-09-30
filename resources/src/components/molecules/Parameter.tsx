@@ -1,4 +1,5 @@
-import React, { VFC } from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useCallback, VFC } from "react";
 import {
     Legend,
     PolarAngleAxis,
@@ -31,6 +32,17 @@ export const Parameter: VFC = () => {
         },
     ];
 
+    // 健康値/脳値/メンタル値の数値によってチャートに表示する色を変える関数
+    const changeColor = useCallback((data: (number | undefined)[]): string => {
+        if (data.every((val) => val! > 50)) {
+            return "#6EE7B7";
+        } else if (data.some((val) => val! < 50 && val! > 30)) {
+            return "#FFF100";
+        } else {
+            return "#FF000D";
+        }
+    }, []);
+
     return (
         <ResponsiveContainer width={"100%"} height={400}>
             <RadarChart outerRadius={"90%"} data={data} margin={{ bottom: 60 }}>
@@ -42,8 +54,8 @@ export const Parameter: VFC = () => {
                 <Radar
                     name={`${user?.name}さん`}
                     dataKey="value"
-                    stroke="#6EE7B7"
-                    fill="#6EE7B7"
+                    stroke={changeColor(data.map((val) => val.value))}
+                    fill={changeColor(data.map((val) => val.value))}
                     fillOpacity={0.6}
                 />
             </RadarChart>

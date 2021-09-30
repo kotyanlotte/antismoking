@@ -48,12 +48,14 @@ module.exports = {
                 dark: "#2D3748",
             },
             yellow: {
+                vivid: "#FFF100",
                 light: "#fafaf0",
             },
             red: {
                 default: "#F87171",
                 light: "#FDE2E2",
                 dark: "#7F1D1D",
+                vivid: "#FF000D",
             },
         },
     },
