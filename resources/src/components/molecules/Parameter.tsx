@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { useRecoilValue } from "recoil";
 
+import { RadarText } from "@/components/molecules/Charts/RadarText";
 import { userState } from "@/components/store/userState";
 
 export const Parameter: VFC = () => {
@@ -43,7 +44,7 @@ export const Parameter: VFC = () => {
     }, []);
 
     return (
-        <ResponsiveContainer width={"100%"} height={400}>
+        <ResponsiveContainer height={400}>
             <RadarChart outerRadius={"90%"} data={data} margin={{ bottom: 60 }}>
                 <Legend verticalAlign={"top"} height={36} />
                 <PolarGrid />
@@ -55,6 +56,7 @@ export const Parameter: VFC = () => {
                     stroke={changeColor(data.map((val) => val.value))}
                     fill={changeColor(data.map((val) => val.value))}
                     fillOpacity={0.6}
+                    label={RadarText}
                 />
             </RadarChart>
         </ResponsiveContainer>
