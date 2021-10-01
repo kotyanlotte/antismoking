@@ -44,6 +44,7 @@ export const CigarettesForm: VFC = () => {
                 style="w-32 text-sm px-10 border-green-default hover:bg-green-default hover:text-white-default surface:px-4"
                 isDisabled={isDisabled}
                 loading={loading}
+                cigarettes={cigarettes}
             >
                 入力
             </PrimaryButton>

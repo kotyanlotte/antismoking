@@ -13,10 +13,19 @@ type PrimaryButtonProps = {
     onClick?: () => void;
     loading?: boolean;
     isDisabled?: boolean;
+    cigarettes?: string | number;
 };
 
 export const PrimaryButton: VFC<PrimaryButtonProps> = memo(
-    ({ children, style, loginStyle, onClick, loading, isDisabled }) => {
+    ({
+        children,
+        style,
+        loginStyle,
+        onClick,
+        loading,
+        isDisabled,
+        cigarettes,
+    }) => {
         const isLoggedIn = useRecoilValue(isLoggedInState);
 
         return (
@@ -27,7 +36,7 @@ export const PrimaryButton: VFC<PrimaryButtonProps> = memo(
                 ])}
                 onClick={onClick}
                 type="button"
-                disabled={isDisabled === true}
+                disabled={isDisabled === true || cigarettes === ""}
             >
                 {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : children}
             </button>
