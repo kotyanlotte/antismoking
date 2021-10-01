@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useCallback } from "react";
 import { toast } from "react-toastify";
-import { SetterOrUpdater, useRecoilState, useRecoilValue } from "recoil";
+import { SetterOrUpdater, useRecoilState } from "recoil";
 
 import { isLoadingButton } from "@/components/store/buttonSpinner";
 import { cigarettesState } from "@/components/store/cigarettesState";
@@ -20,7 +20,7 @@ type UpdateUserReturnType = {
 };
 
 export const useUpdateUser = (): UpdateUserReturnType => {
-    const cigarettes = useRecoilValue(cigarettesState);
+    const [cigarettes, setCigarettes] = useRecoilState(cigarettesState);
 
     const [user, setUser] = useRecoilState(userState);
 
@@ -48,6 +48,7 @@ export const useUpdateUser = (): UpdateUserReturnType => {
                 setUser(res.data);
                 setDisabled(true);
                 setLoading(true);
+                setCigarettes("");
             })
             .catch(() => {
                 toast.error(
@@ -55,6 +56,7 @@ export const useUpdateUser = (): UpdateUserReturnType => {
                 );
                 setDisabled(true);
                 setLoading(true);
+                setCigarettes("");
             });
     }, [cigarettes, user]);
 
