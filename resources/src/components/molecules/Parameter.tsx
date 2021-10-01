@@ -48,7 +48,7 @@ export const Parameter: VFC = () => {
             <RadarChart outerRadius={"90%"} data={data} margin={{ bottom: 60 }}>
                 <Legend verticalAlign={"top"} height={36} />
                 <PolarGrid />
-                <PolarAngleAxis dataKey="title" />
+                <PolarAngleAxis dataKey="title" tick={false} />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} />
                 <Radar
                     name={`${user?.name}さん`}
