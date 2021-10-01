@@ -8,13 +8,18 @@ type HeaderLinkProps = {
     style: string;
     loginStyle?: string;
     text: string;
+    isDisabled?: boolean;
 };
 
 export const HeaderLink: VFC<HeaderLinkProps> = memo(
-    ({ to, style, loginStyle, text }) => {
+    ({ to, style, loginStyle, text, isDisabled }) => {
         return (
             <Link to={to}>
-                <PrimaryButton style={style} loginStyle={loginStyle}>
+                <PrimaryButton
+                    style={style}
+                    loginStyle={loginStyle}
+                    isDisabled={isDisabled}
+                >
                     {text}
                 </PrimaryButton>
             </Link>

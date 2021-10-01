@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { toast } from "react-toastify";
 import { SetterOrUpdater, useRecoilState, useRecoilValue } from "recoil";
 
 import { isLoadingButton } from "@/components/store/buttonSpinner";
 import { cigarettesState } from "@/components/store/cigarettesState";
+import { isDisabledState } from "@/components/store/disabledState";
 import { userState } from "@/components/store/userState";
 import { User } from "@/components/types/userType";
 
@@ -24,9 +25,7 @@ export const useUpdateUser = (): UpdateUserReturnType => {
     const [user, setUser] = useRecoilState(userState);
 
     const [loading, setLoading] = useRecoilState(isLoadingButton);
-
-    // 3秒間ボタンが押せなくなるdisabled属性を管理するstate
-    const [isDisabled, setDisabled] = useState(false);
+    const [isDisabled, setDisabled] = useRecoilState(isDisabledState);
 
     const updateUser = useCallback(async () => {
         await axios

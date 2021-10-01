@@ -1,13 +1,17 @@
 import React, { VFC } from "react";
+import { useRecoilValue } from "recoil";
 
 import { useDestroy } from "@/components/hooks/useDestroy";
 import { useLogout } from "@/components/hooks/useLogout";
 import { HeaderLink } from "@/components/molecules/header/HeaderLink";
 import { LogoutAndDeleteModal } from "@/components/organisms/LogoutAndDeleteModal";
+import { isDisabledState } from "@/components/store/disabledState";
 
 export const LoginHeaderLink: VFC = () => {
     const { destroy } = useDestroy();
     const { logout } = useLogout();
+
+    const isDisabled = useRecoilValue(isDisabledState);
 
     return (
         <>
@@ -16,6 +20,7 @@ export const LoginHeaderLink: VFC = () => {
                 style="btn-bg-green"
                 loginStyle="login-btn"
                 text="編集"
+                isDisabled={isDisabled}
             />
             <LogoutAndDeleteModal
                 loginStyle="login-btn"
@@ -26,6 +31,7 @@ export const LoginHeaderLink: VFC = () => {
                 yes="退会する"
                 height="70%"
                 onClick={destroy}
+                isDisabled={isDisabled}
             />
             <LogoutAndDeleteModal
                 loginStyle="login-btn"
@@ -35,6 +41,7 @@ export const LoginHeaderLink: VFC = () => {
                 yes="ログアウトする"
                 height="50%"
                 onClick={logout}
+                isDisabled={isDisabled}
             />
         </>
     );
