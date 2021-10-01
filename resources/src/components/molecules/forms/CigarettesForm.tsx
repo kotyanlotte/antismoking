@@ -10,7 +10,8 @@ import { cigarettesState } from "@/components/store/cigarettesState";
 export const CigarettesForm: VFC = () => {
     const [cigarettes, setCigarettes] = useRecoilState(cigarettesState);
 
-    const { updateUser } = useUpdateUser();
+    const { updateUser, isDisabled, setDisabled, loading, setLoading } =
+        useUpdateUser();
 
     // 吸ったタバコの本数を取得する関数
     const onChangeCigarettes = useCallback(
@@ -19,6 +20,16 @@ export const CigarettesForm: VFC = () => {
         },
         []
     );
+
+    // 3秒間ボタンが押せなくなる関数
+    const clickBtnAble = useCallback(() => {
+        setDisabled(false);
+        setLoading(false);
+    }, []);
+
+    if (isDisabled) {
+        setTimeout(clickBtnAble, 3000);
+    }
 
     return (
         <form className="space-y-7 flex flex-col items-center surface:flex-row surface:justify-center surface:space-y-0 surface:space-x-5 ">
@@ -31,6 +42,8 @@ export const CigarettesForm: VFC = () => {
             <PrimaryButton
                 onClick={updateUser}
                 style="w-32 text-sm px-10 border-green-default hover:bg-green-default hover:text-white-default surface:px-4"
+                isDisabled={isDisabled}
+                loading={loading}
             >
                 入力
             </PrimaryButton>

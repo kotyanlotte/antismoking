@@ -12,17 +12,22 @@ type PrimaryButtonProps = {
     loginStyle?: string;
     onClick?: () => void;
     loading?: boolean;
+    isDisabled?: boolean;
 };
 
 export const PrimaryButton: VFC<PrimaryButtonProps> = memo(
-    ({ children, style, loginStyle, onClick, loading }) => {
+    ({ children, style, loginStyle, onClick, loading, isDisabled }) => {
         const isLoggedIn = useRecoilValue(isLoggedInState);
 
         return (
             <button
-                className={cc([`btn ${style}`, isLoggedIn && loginStyle])}
+                className={cc([
+                    `btn disabled:opacity-50 ${style}`,
+                    isLoggedIn && loginStyle,
+                ])}
                 onClick={onClick}
                 type="button"
+                disabled={isDisabled === true}
             >
                 {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : children}
             </button>

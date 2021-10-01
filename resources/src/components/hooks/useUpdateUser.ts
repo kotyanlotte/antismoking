@@ -1,15 +1,21 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { SetterOrUpdater, useRecoilState, useRecoilValue } from "recoil";
 
+import { isLoadingButton } from "@/components/store/buttonSpinner";
 import { cigarettesState } from "@/components/store/cigarettesState";
 import { userState } from "@/components/store/userState";
 import { User } from "@/components/types/userType";
 
 type UpdateUserReturnType = {
     updateUser: () => void;
+    isDisabled: boolean;
+    setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
+    loading: boolean;
+    setLoading: SetterOrUpdater<boolean>;
 };
 
 export const useUpdateUser = (): UpdateUserReturnType => {
@@ -17,33 +23,47 @@ export const useUpdateUser = (): UpdateUserReturnType => {
 
     const [user, setUser] = useRecoilState(userState);
 
+    const [loading, setLoading] = useRecoilState(isLoadingButton);
+
+    // 3秒間ボタンが押せなくなるdisabled属性を管理するstate
+    const [isDisabled, setDisabled] = useState(false);
+
     const updateUser = useCallback(async () => {
         await axios
             .put<User>("api/user", {
                 health_value:
                     Number(cigarettes) > 0
-                        ? user && user?.health_value - 3 * Number(cigarettes)
-                        : user && user?.health_value + 3,
+                        ? user!.health_value - 3 * Number(cigarettes)
+                        : user!.health_value + 3,
                 mental_value:
                     Number(cigarettes) > 0
-                        ? user && user?.mental_value - 2 * Number(cigarettes)
-                        : user && user?.mental_value + 2,
+                        ? user!.mental_value - 2 * Number(cigarettes)
+                        : user!.mental_value + 2,
                 brain_value:
                     Number(cigarettes) > 0
-                        ? user && user?.brain_value - 1 * Number(cigarettes)
-                        : user && user?.brain_value + 1,
-                total_cigarettes:
-                    user && user?.total_cigarettes + Number(cigarettes),
+                        ? user!.brain_value - 1 * Number(cigarettes)
+                        : user!.brain_value + 1,
+                total_cigarettes: user!.total_cigarettes + Number(cigarettes),
             })
             .then((res) => {
                 setUser(res.data);
+                setDisabled(true);
+                setLoading(true);
             })
             .catch(() => {
-                toast.error("データの更新に失敗しました");
+                toast.error(
+                    "データの更新に失敗しました。しばらくお待ちください。"
+                );
+                setDisabled(true);
+                setLoading(true);
             });
     }, [cigarettes, user]);
 
     return {
         updateUser,
+        isDisabled,
+        setDisabled,
+        loading,
+        setLoading,
     };
 };
