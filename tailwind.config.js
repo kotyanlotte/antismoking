@@ -6,6 +6,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 body: ["Kameron", "Noto Sans JP", "sans-serif"],
+                doraque: ["PixelMplus10-Regular", "sans-serif"],
             },
             grayscale: {
                 100: "100%",

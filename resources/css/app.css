@@ -30,6 +30,13 @@
         @apply bg-white-default rounded-lg py-10 px-6 w-10/12 mx-auto shadow-md flex flex-col items-center space-y-2;
     }
 }
+
+@font-face {
+    font-family: "PixelMplus10-Regular";
+    src: url("../src/components/utils/fonts/PixelMplus10-Regular.ttf")
+        format("truetype");
+}
+
 @tailwind utilities;
 
 @layer utilities {
