@@ -23,15 +23,22 @@ export const Parameter: VFC = () => {
         },
     ];
 
-    const userData = {
-        data,
-        user: { name: user?.name, cigarettes: user?.total_cigarettes },
-    };
+    const userData = [
+        ...data,
+        {
+            title: "今までに吸ったタバコの本数は",
+            value: `${user?.total_cigarettes}本`,
+        },
+        {
+            title: "減少した寿命",
+            value: `${user?.mental_value}分`,
+        },
+    ];
 
     return (
         <>
             <Charts chartsData={data} userName={user?.name} />
-            <Status userData={userData} />
+            <Status userData={userData} userName={user?.name} />
         </>
     );
 };
