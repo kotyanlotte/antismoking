@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useCallback, VFC } from "react";
+import React, { memo, useCallback, VFC } from "react";
 import {
     Legend,
     PolarAngleAxis,
@@ -9,29 +9,16 @@ import {
     RadarChart,
     ResponsiveContainer,
 } from "recharts";
-import { useRecoilValue } from "recoil";
 
 import { RadarText } from "@/components/molecules/Charts/RadarText";
-import { userState } from "@/components/store/userState";
+import { ChartsType } from "@/components/types/chartsType";
 
-export const Charts: VFC = () => {
-    const user = useRecoilValue(userState);
+type DataType = {
+    chartsData: ChartsType[];
+    userName: string | undefined;
+};
 
-    const data = [
-        {
-            title: "健康値",
-            value: user?.health_value,
-        },
-        {
-            title: "メンタル値",
-            value: user?.mental_value,
-        },
-        {
-            title: "脳値",
-            value: user?.brain_value,
-        },
-    ];
-
+export const Charts: VFC<DataType> = memo(({ chartsData, userName }) => {
     // 健康値/脳値/メンタル値の数値によってチャートに表示する色を変える関数
     const changeColor = useCallback((data: (number | undefined)[]): string => {
         if (data.every((val) => val! > 50)) {
@@ -45,20 +32,26 @@ export const Charts: VFC = () => {
 
     return (
         <ResponsiveContainer height={400}>
-            <RadarChart outerRadius={"90%"} data={data} margin={{ bottom: 60 }}>
+            <RadarChart
+                outerRadius={"90%"}
+                data={chartsData}
+                margin={{ bottom: 60 }}
+            >
                 <Legend verticalAlign={"top"} height={36} />
                 <PolarGrid />
                 <PolarAngleAxis dataKey="title" tick={false} />
                 <PolarRadiusAxis angle={30} domain={[0, 100]} />
                 <Radar
-                    name={`${user?.name}さん`}
+                    name={`${userName}さん`}
                     dataKey="value"
-                    stroke={changeColor(data.map((val) => val.value))}
-                    fill={changeColor(data.map((val) => val.value))}
+                    stroke={changeColor(chartsData.map((val) => val.value))}
+                    fill={changeColor(chartsData.map((val) => val.value))}
                     fillOpacity={0.6}
                     label={RadarText}
                 />
             </RadarChart>
         </ResponsiveContainer>
     );
-};
+});
+
+Charts.displayName = "Charts";
