@@ -38,6 +38,7 @@ module.exports = {
             black: {
                 default: "#333",
                 dark: "#3C3C3C",
+                strong: "#000",
             },
             green: {
                 default: "#6EE7B7",
