@@ -1,4 +1,5 @@
-import React, { VFC } from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useCallback, VFC } from "react";
 import { useRecoilValue } from "recoil";
 
 import { Charts } from "@/components/molecules/Charts/Charts";
@@ -7,6 +8,15 @@ import { userState } from "@/components/store/userState";
 
 export const Parameter: VFC = () => {
     const user = useRecoilValue(userState);
+
+    // 分を〇時間〇分に変換する関数
+    const timeConvert = useCallback((time: number | null): string => {
+        const hours = time! / 60;
+        const revertHours = Math.floor(hours);
+        const minutes = (hours - revertHours) * 60;
+        const revertMinutes = Math.round(minutes);
+        return `${revertHours}時間${revertMinutes}分`;
+    }, []);
 
     const data = [
         {
@@ -31,7 +41,7 @@ export const Parameter: VFC = () => {
         },
         {
             title: "減少した寿命",
-            value: `${user?.mental_value}分`,
+            value: timeConvert(user && user.total_cigarettes * 15),
         },
     ];
 
