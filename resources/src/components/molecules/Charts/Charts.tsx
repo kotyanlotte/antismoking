@@ -31,7 +31,10 @@ export const Charts: VFC<DataType> = memo(({ chartsData, userName }) => {
     }, []);
 
     return (
-        <ResponsiveContainer height={400}>
+        <ResponsiveContainer
+            height={400}
+            width={innerWidth > 640 ? "50%" : "100%"}
+        >
             <RadarChart
                 outerRadius={"90%"}
                 data={chartsData}

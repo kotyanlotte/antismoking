@@ -36,7 +36,7 @@ export const Parameter: VFC = () => {
     const userData = [
         ...data,
         {
-            title: "今までに吸ったタバコの本数は",
+            title: "今までに吸ったタバコの本数",
             value: `${user?.total_cigarettes}本`,
         },
         {
@@ -46,9 +46,9 @@ export const Parameter: VFC = () => {
     ];
 
     return (
-        <>
+        <div className="flex flex-col sm:flex-row">
             <Charts chartsData={data} userName={user?.name} />
             <Status userData={userData} userName={user?.name} />
-        </>
+        </div>
     );
 };
