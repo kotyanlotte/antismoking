@@ -18,7 +18,7 @@ export const Status: VFC<StatusType> = memo(({ userData, userName }) => {
 
     return (
         <div className="font-doraque min-w-status mb-10 sm:mb-0">
-            <table className="bg-black-strong border-white-default text-white-default w-full">
+            <table className="bg-black-strong border-white-default text-white-default w-full rounded">
                 <thead className="border-b-2">
                     <tr>
                         <th>{`${userName}さんのパラメータ`}</th>
@@ -27,7 +27,7 @@ export const Status: VFC<StatusType> = memo(({ userData, userName }) => {
                 <tbody className="border-b-2">
                     {userData.map((val) => (
                         <tr key={val.title}>
-                            <td className="py-1">{`${val.title}:${val.value}`}</td>
+                            <td className="py-1 pl-1">{`${val.title}:${val.value}`}</td>
                         </tr>
                     ))}
                 </tbody>
@@ -38,7 +38,7 @@ export const Status: VFC<StatusType> = memo(({ userData, userName }) => {
                                 <th>デメリット</th>
                             </tr>
                             <tr>
-                                <td>{text}</td>
+                                <td className="pl-1">{text}</td>
                             </tr>
                         </>
                     ) : null}
