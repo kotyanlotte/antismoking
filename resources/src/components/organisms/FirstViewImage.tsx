@@ -24,9 +24,9 @@ export const FirstViewImage: VFC = () => {
             </p>
             <PrimaryButton
                 onClick={guestLogin}
-                style="absolute top-72 left-1/2 -translate-x-1/2 text-green-default bg-white-default border-green-default"
+                style="absolute top-72 left-1/2 -translate-x-1/2 text-green-default bg-white-default border-green-default hover:text-white-default hover:bg-green-default"
             >
-                テストログイン
+                ゲストログイン
             </PrimaryButton>
         </div>
     );
