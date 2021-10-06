@@ -24,6 +24,9 @@ export const useGuestLogin = (): GuestLoginReturnType => {
             .then(() => {
                 setLoggedInGuest(true);
                 history.push("/home");
+            })
+            .catch(() => {
+                history.push("/about");
             });
     }, [history]);
 
