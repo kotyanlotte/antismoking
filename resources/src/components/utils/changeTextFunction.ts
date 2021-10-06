@@ -17,7 +17,7 @@ export const changeText = (cigarettes: number | string): string => {
             return "喫煙者は、非喫煙者と比べて10年ほど寿命が短くなる。";
         }
         case cigarettes > 18: {
-            return "メンタルにも悪い。うつ病リスクが3倍、自殺率で1.3倍~2倍となる。";
+            return "メンタルに悪い。うつ病リスクが3倍、自殺率で1.3~2倍となる。";
         }
         case cigarettes > 15: {
             return "日本では、受動喫煙が原因で、1.5万人が死亡している。";
