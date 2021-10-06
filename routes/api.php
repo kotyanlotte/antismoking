@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->put('/user', [UsersController::class,'update']);
+
 Route::middleware('auth:sanctum')->delete('/delete', [UsersController::class, "destroy"]);
+
+Route::post('/login/guest',[LoginController::class,"guestLogin"]);
