@@ -21,6 +21,7 @@ module.exports = {
             width: {
                 650: "650px",
                 inputWidth: "min(400px,80vw)",
+                img: "min(500px,80%)",
             },
             height: {
                 400: "400px",
