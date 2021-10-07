@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 
 import { useDestroy } from "@/components/hooks/useDestroy";
 import { useLogout } from "@/components/hooks/useLogout";
-import { HeaderLink } from "@/components/molecules/header/HeaderLink";
+import { LinkButton } from "@/components/molecules/LinkButton";
 import { LogoutAndDeleteModal } from "@/components/organisms/LogoutAndDeleteModal";
 import { isDisabledState } from "@/components/store/disabledState";
 
@@ -15,7 +15,7 @@ export const LoginHeaderLink: VFC = () => {
 
     return (
         <>
-            <HeaderLink
+            <LinkButton
                 to="/edit"
                 style="btn-bg-green"
                 loginStyle="login-btn"

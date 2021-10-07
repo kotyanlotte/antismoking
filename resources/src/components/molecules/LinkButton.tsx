@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { PrimaryButton } from "@/components/atoms/buttons/PrimaryButton";
 
-type HeaderLinkProps = {
+type LinkButtonProps = {
     to: string;
     style: string;
     loginStyle?: string;
@@ -11,7 +11,7 @@ type HeaderLinkProps = {
     isDisabled?: boolean;
 };
 
-export const HeaderLink: VFC<HeaderLinkProps> = memo(
+export const LinkButton: VFC<LinkButtonProps> = memo(
     ({ to, style, loginStyle, text, isDisabled }) => {
         return (
             <Link to={to}>
@@ -27,4 +27,4 @@ export const HeaderLink: VFC<HeaderLinkProps> = memo(
     }
 );
 
-HeaderLink.displayName = "HeaderLink";
+LinkButton.displayName = "LinkButton";

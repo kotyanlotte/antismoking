@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 import { useRecoilValue } from "recoil";
 
-import { HeaderLink } from "@/components/molecules/header/HeaderLink";
+import { LinkButton } from "@/components/molecules/LinkButton";
 import { isLoggedInState } from "@/components/store/login/loginUserState";
 
 export const NoMatch: VFC = () => {
@@ -27,7 +27,7 @@ export const NoMatch: VFC = () => {
                         alt="page not found"
                     />
                 </picture>
-                <HeaderLink
+                <LinkButton
                     style="btn-bg-green"
                     to={isLoggedIn ? "/home" : "/about"}
                     text="トップページへ"

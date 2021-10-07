@@ -1,12 +1,12 @@
 import React, { VFC } from "react";
 
-import { HeaderLink } from "@/components/molecules/header/HeaderLink";
+import { LinkButton } from "@/components/molecules/LinkButton";
 
 export const NoLoginHeaderLink: VFC = () => {
     return (
         <>
-            <HeaderLink to="/login" style="btn-bg-white" text="ログイン" />
-            <HeaderLink to="/register" style="btn-bg-green" text="新規登録" />
+            <LinkButton to="/login" style="btn-bg-white" text="ログイン" />
+            <LinkButton to="/register" style="btn-bg-green" text="新規登録" />
         </>
     );
 };
