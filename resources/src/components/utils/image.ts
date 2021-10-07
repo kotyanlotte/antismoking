@@ -19,4 +19,9 @@ export const image = {
         src: "/images/firstViewImage/tabacco.jpg",
         alt: "ファーストビュー画像",
     },
+    noMatch: {
+        srcSet: "images/404page/undraw_page_not_found.webp",
+        src: "/images/404page/undraw_page_not_found.jpg",
+        alt: "page not found",
+    },
 };

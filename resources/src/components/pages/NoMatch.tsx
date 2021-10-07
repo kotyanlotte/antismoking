@@ -2,7 +2,9 @@ import React, { VFC } from "react";
 import { useRecoilValue } from "recoil";
 
 import { LinkButton } from "@/components/molecules/LinkButton";
+import { Picture } from "@/components/molecules/Picture";
 import { isLoggedInState } from "@/components/store/login/loginUserState";
+import { image } from "@/components/utils/image";
 
 export const NoMatch: VFC = () => {
     const isLoggedIn = useRecoilValue(isLoggedInState);
@@ -16,17 +18,12 @@ export const NoMatch: VFC = () => {
                 <p className="text-xs mb-5">
                     ページが削除されているか、URLが誤っている可能性があります。
                 </p>
-                <picture>
-                    <source
-                        srcSet="images/404page/undraw_page_not_found.webp"
-                        type="image/webp"
-                    />
-                    <img
-                        className="w-img my-0 mx-auto"
-                        src="/images/404page/undraw_page_not_found.jpg"
-                        alt="page not found"
-                    />
-                </picture>
+                <Picture
+                    srcSet={image.noMatch.srcSet}
+                    src={image.noMatch.src}
+                    alt={image.noMatch.alt}
+                    style="w-img my-0 mx-auto"
+                />
                 <LinkButton
                     style="btn-bg-green"
                     to={isLoggedIn ? "/home" : "/about"}
