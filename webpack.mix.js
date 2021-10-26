@@ -12,7 +12,7 @@ const path = require("path");
  |
  */
 
-mix.ts("resources/src/components/router/routing.tsx", "public/js")
+mix.ts("resources/src/components/router/Routing.tsx", "public/js")
     .react()
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
     .webpackConfig({
