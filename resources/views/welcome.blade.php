@@ -17,6 +17,6 @@
 </head>
 <body>
   <div id="app"></div>
-  <script src="{{ mix('js/routing.js') }}"></script>
+  <script src="{{ asset('js/routing.js') }}"></script>
 </body>
 </html>
