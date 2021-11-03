@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
   deploy:
-      machine:
-        image: circleci/classic:edge
+    machine:
+      image: circleci/classic:edge
     steps:
       - add_ssh_keys:
           fingerprints:
