@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "LlEbmM5gCKO6W1sz+1izJQ9h9cv/DYq23+3s6e1IHhM"
+            - "uFKjFqNTuCKccsMH7l/wjNcF2FfmoIxDU2kQl9sVEqY"
       - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /var/www/antismoking/ && git pull'
 
 workflows:
