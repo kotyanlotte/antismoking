@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 
 import { Loading } from "@/components/molecules/Loading";
+import { ScrollToTop } from "@/components/utils/ScrollToTop";
 
 const AuthUser = lazy(() =>
     import("@/components/organisms/AuthUser").then(({ AuthUser }) => ({
@@ -64,18 +65,13 @@ const ResetPassword = lazy(() =>
 const Terms = lazy(() =>
     import("@/components/pages/Terms").then(({ Terms }) => ({ default: Terms }))
 );
-const ScrollToTop = lazy(() =>
-    import("@/components/utils/ScrollToTop").then(({ ScrollToTop }) => ({
-        default: ScrollToTop,
-    }))
-);
 
 export const Routing: VFC = () => {
     return (
         <Router>
-            <Suspense fallback={<Loading />}>
-                <RecoilRoot>
-                    <ScrollToTop />
+            <ScrollToTop />
+            <RecoilRoot>
+                <Suspense fallback={<Loading />}>
                     <Switch>
                         <Redirect exact from="/" to="/about" />
                         <Route path="/about" component={About} />
@@ -104,8 +100,8 @@ export const Routing: VFC = () => {
                         <Route path="*" component={NoMatch} />
                     </Switch>
                     <ToastContainer position="top-center" autoClose={3000} />
-                </RecoilRoot>
-            </Suspense>
+                </Suspense>
+            </RecoilRoot>
         </Router>
     );
 };

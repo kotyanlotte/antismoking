@@ -22,6 +22,10 @@ mix.ts("resources/src/components/router/Routing.tsx", "public/js")
                 "@": path.resolve(__dirname, "resources/src/"),
             },
         },
+        output: {
+            publicPath: "/",
+            chunkFilename: "js/chunks/[name].chunk.js",
+        },
     })
     .browserSync({
         files: [
