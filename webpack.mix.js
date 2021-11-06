@@ -27,6 +27,9 @@ mix.ts("resources/src/components/router/Routing.tsx", "public/js")
             chunkFilename: "js/chunks/[name].chunk.js",
         },
     })
+    .babelConfig({
+        plugins: ["@babel/plugin-syntax-dynamic-import"],
+    })
     .browserSync({
         files: [
             "resources/src/**/*.tsx",
