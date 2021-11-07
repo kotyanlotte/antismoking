@@ -16,49 +16,35 @@ import { RecoilRoot } from "recoil";
 
 import { Loading } from "@/components/molecules/Loading";
 import { ScrollToTop } from "@/components/utils/ScrollToTop";
+import { AuthUser } from "@/components/organisms/AuthUser";
+import { NotLoggedInUser } from "@/components/organisms/NotLoggedInUser";
+import { About } from "@/components/pages/About";
+import { Home } from "@/components/pages/Home";
+import { Login } from "@/components/pages/Login";
+import { Register } from "@/components/pages/Register";
 
-const AuthUser = lazy(() =>
-    import("@/components/organisms/AuthUser").then(({ AuthUser }) => ({
-        default: AuthUser,
-    }))
-);
-const NotLoggedInUser = lazy(() =>
-    import("@/components/organisms/NotLoggedInUser").then(
-        ({ NotLoggedInUser }) => ({ default: NotLoggedInUser })
-    )
-);
-const About = lazy(() =>
-    import("@/components/pages/About").then(({ About }) => ({ default: About }))
-);
 const Edit = lazy(() =>
     import("@/components/pages/Edit").then(({ Edit }) => ({ default: Edit }))
 );
+
 const ForgotPassword = lazy(() =>
     import("@/components/pages/ForgotPassword").then(({ ForgotPassword }) => ({
         default: ForgotPassword,
     }))
 );
-const Home = lazy(() =>
-    import("@/components/pages/Home").then(({ Home }) => ({ default: Home }))
-);
-const Login = lazy(() =>
-    import("@/components/pages/Login").then(({ Login }) => ({ default: Login }))
-);
+
 const NoMatch = lazy(() =>
     import("@/components/pages/NoMatch").then(({ NoMatch }) => ({
         default: NoMatch,
     }))
 );
+
 const Policy = lazy(() =>
     import("@/components/pages/Policy").then(({ Policy }) => ({
         default: Policy,
     }))
 );
-const Register = lazy(() =>
-    import("@/components/pages/Register").then(({ Register }) => ({
-        default: Register,
-    }))
-);
+
 const ResetPassword = lazy(() =>
     import("@/components/pages/ResetPassword").then(({ ResetPassword }) => ({
         default: ResetPassword,
