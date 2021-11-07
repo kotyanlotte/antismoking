@@ -1,5 +1,5 @@
 import React, { memo, VFC } from "react";
-import { Redirect, Route, useLocation } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
 import { Home } from "@/components/pages/Home";
