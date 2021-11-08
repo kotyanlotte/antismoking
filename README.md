@@ -7,6 +7,16 @@ https://antismoking.app/about
 
 # 仕様技術
 - PHP 7.4.21 
-
+- Laravel 8.65.0
+- MySQL 8.0.23
+- Apache
+- AWS
+-   VPC
+-   EC2
+-   RDS
+-   Route53
+-   ELB
+-   Certificate Manager
+-   
 
 
