@@ -11,12 +11,15 @@ https://antismoking.app/about
 - MySQL 8.0.23
 - Apache
 - AWS
-- - VPC
--   EC2
--   RDS
--   Route53
--   ELB
--   Certificate Manager
--   
+  - VPC
+  - EC2
+  - RDS
+  - Route53
+  - ELB
+  - Certificate Manager
+- React 17.0.2
+- TypeScript 4.3.5
+- tailwindcss 2.2.7
+- CircleCi CI/CD 
 
 
