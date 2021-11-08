@@ -11,7 +11,7 @@ https://antismoking.app/about
 - MySQL 8.0.23
 - Apache
 - AWS
--   VPC
+- - VPC
 -   EC2
 -   RDS
 -   Route53
