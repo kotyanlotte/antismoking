@@ -19,7 +19,7 @@ https://antismoking.app/about
   - Certificate Manager
 - React 17.0.2
 - TypeScript 4.3.5
-- tailwindcss 2.2.7
+- TailwindCSS 2.2.7
 - CircleCi CI/CD 
 
 # AWS構成図
