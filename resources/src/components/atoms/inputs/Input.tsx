@@ -8,10 +8,11 @@ type InputProps = {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: string;
     onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    inputmode?: "numeric";
 };
 
 export const Input: VFC<InputProps> = memo(
-    ({ placeholder, type, value, onChange, id, style, onInput }) => {
+    ({ placeholder, type, value, onChange, id, style, onInput, inputmode }) => {
         return (
             <input
                 type={type}
@@ -21,6 +22,7 @@ export const Input: VFC<InputProps> = memo(
                 onChange={(e) => onChange?.(e)}
                 id={id}
                 onInput={onInput}
+                inputMode={inputmode}
             />
         );
     }
