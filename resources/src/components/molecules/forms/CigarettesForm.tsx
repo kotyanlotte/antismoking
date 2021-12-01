@@ -38,6 +38,7 @@ export const CigarettesForm: VFC = () => {
                 style="max-w-sm"
                 onInput={onChangeCigarettes}
                 value={cigarettes}
+                inputmode="numeric"
             />
             <PrimaryButton
                 onClick={updateUser}
