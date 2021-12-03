@@ -29,6 +29,9 @@
     .card {
         @apply bg-white-default rounded-lg py-10 px-6 w-10/12 mx-auto shadow-md flex flex-col items-center space-y-2;
     }
+    .input {
+        @apply border rounded-md text-sm px-4 py-2 focus:outline-none focus:border-green-dark w-full placeholder-gray-dark;
+    }
 }
 
 @font-face {

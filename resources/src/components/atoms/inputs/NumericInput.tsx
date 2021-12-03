@@ -10,7 +10,7 @@ export const NumericInput: VFC<NumericInputProps> = memo(
         return (
             <input
                 type="text"
-                className="max-w-sm"
+                className="max-w-sm input"
                 inputMode="numeric"
                 onInput={onInput}
                 value={value}
