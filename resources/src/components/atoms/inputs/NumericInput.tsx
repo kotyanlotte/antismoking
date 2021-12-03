@@ -14,6 +14,7 @@ export const NumericInput: VFC<NumericInputProps> = memo(
                 inputMode="numeric"
                 onInput={onInput}
                 value={value}
+                id="cigarettes"
             />
         );
     }
