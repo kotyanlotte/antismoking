@@ -5,7 +5,7 @@
 https://antismoking.app/about
 ![image](https://user-images.githubusercontent.com/76690516/140735953-fcb6fc43-836c-4d61-b6f3-70be1dbcc344.png)
 
-# 仕様技術
+# 使用技術
 - PHP 7.4.21 
 - Laravel 8.65.0
 - MySQL 8.0.23
