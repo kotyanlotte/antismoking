@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kameron&family=Noto+Sans+JP:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
 
 @tailwind base;
 
@@ -38,6 +38,10 @@
     font-family: "PixelMplus10-Regular";
     src: url("../src/components/utils/fonts/PixelMplus10-Regular.ttf")
         format("truetype");
+}
+@font-face {
+    font-family: "NotoSansJP-Thin.woff2";
+    src: url("../src/components/utils/fonts/NotoSansJP-Thin.woff2");
 }
 
 @tailwind utilities;
