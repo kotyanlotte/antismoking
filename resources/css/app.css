@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
+@font-face {
+    font-family: "Noto Sans JP";
+    src: local("Noto Sans JP"),
+        url("/fonts/NotoSansJP-Thin.woff2") format("Noto Sans JP");
+}
 
 @tailwind base;
 
@@ -32,16 +36,6 @@
     .input {
         @apply border rounded-md text-sm px-4 py-2 focus:outline-none focus:border-green-dark w-full placeholder-gray-dark;
     }
-}
-
-@font-face {
-    font-family: "PixelMplus10-Regular";
-    src: url("../src/components/utils/fonts/PixelMplus10-Regular.ttf")
-        format("truetype");
-}
-@font-face {
-    font-family: "NotoSansJP-Thin.woff2";
-    src: url("../src/components/utils/fonts/NotoSansJP-Thin.woff2");
 }
 
 @tailwind utilities;

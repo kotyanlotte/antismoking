@@ -5,8 +5,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                body: ["Kameron", "Noto Sans JP", "sans-serif"],
-                doraque: ["PixelMplus10-Regular", "sans-serif"],
+                body: ["Georgia", "Noto Sans JP", "sans-serif"],
             },
             grayscale: {
                 100: "100%",
