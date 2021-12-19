@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Noto Sans JP";
-    src: local("Noto Sans JP"),
-        url("/fonts/NotoSansJP-Thin.woff2") format("Noto Sans JP");
+    src: local("Noto Sans JP")
+        url("../src/components/utils/fonts/NotoSansJP-Thin.woff2");
 }
 
 @tailwind base;
