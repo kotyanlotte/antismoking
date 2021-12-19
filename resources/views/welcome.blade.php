@@ -13,10 +13,10 @@
 
   <title>antismoking</title>
 
-  <link rel="stylesheet" href=" {{ asset('/css/app.css') }} ">
+  <link rel="stylesheet" href=" {{ mix('/css/app.css') }} ">
 </head>
 <body>
   <div id="app"></div>
-  <script src="{{ asset('/js/Routing.js') }}"></script>
+  <script src="{{ mix('/js/Routing.js') }}"></script>
 </body>
 </html>
