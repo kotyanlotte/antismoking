@@ -15,6 +15,7 @@ const path = require("path");
 mix.ts("resources/src/components/router/Routing.tsx", "public/js")
     .react()
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
+    .version()
     .webpackConfig({
         resolve: {
             extensions: [".ts", ".tsx"],
